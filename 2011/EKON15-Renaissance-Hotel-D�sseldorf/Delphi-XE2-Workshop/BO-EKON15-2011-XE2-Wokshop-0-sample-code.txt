@@ -1,0 +1,17 @@
+You can download the sample code at your SVN/TFS repository: http://bo.codeplex.com/
+
+The repository is being updated over time with new samples.
+
+Just start browsing at http://bo.codeplex.com/SourceControl/BrowseLatest
+
+Then browse to the Native / Delphi folder and see all the examples.
+
+You can also use SVN to get the most recent version from https://bo.svn.codeplex.com/svn
+
+In the root directory you will find a file "Version-control-URLs.txt" that contains a list of other repositories that are interesting, and on which some of our examples depend on.
+
+When you have questions, please contact us:
+
+Jeroen Pluimers		jpluimers@better-office.com
+Edwin van der Kraan	evdkraan@better-office.com
+better office benelux
