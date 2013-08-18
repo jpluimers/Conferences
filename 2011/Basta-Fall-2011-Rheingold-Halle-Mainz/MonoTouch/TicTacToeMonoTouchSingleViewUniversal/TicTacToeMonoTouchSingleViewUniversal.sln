@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeMonoTouchSingleViewUniversal", "TicTacToeMonoTouchSingleViewUniversal\TicTacToeMonoTouchSingleViewUniversal.csproj", "{08428148-C70D-45CB-9373-264BEF5377DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeLogic", "..\..\Shared\TicTacToeLogic\TicTacToeLogic.csproj", "{6BF010B5-A96C-421B-ABE8-C5579C0CB794}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeLogicMonoTouchLibrary", "..\..\Shared\TicTacToeLogicMonoTouchLibrary\TicTacToeLogicMonoTouchLibrary.csproj", "{21F56F53-51B5-4FEF-AC41-A9C6155F5616}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Debug|iPhone.Build.0 = Debug|iPhone
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Release|iPhone.ActiveCfg = Release|iPhone
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Release|iPhone.Build.0 = Release|iPhone
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{08428148-C70D-45CB-9373-264BEF5377DC}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Release|iPhone.Build.0 = Release|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{21F56F53-51B5-4FEF-AC41-A9C6155F5616}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Release|iPhone.Build.0 = Release|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6BF010B5-A96C-421B-ABE8-C5579C0CB794}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = TicTacToeMonoTouchSingleViewUniversal\TicTacToeMonoTouchSingleViewUniversal.csproj
+	EndGlobalSection
+EndGlobal

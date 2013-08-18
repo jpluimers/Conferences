@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21F56F53-51B5-4FEF-AC41-A9C6155F5616}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TicTacToeLogicMonoTouchLibrary</RootNamespace>
+    <AssemblyName>TicTacToeLogicMonoTouchLibrary</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+    <Folder Include="Mappers\" />
+    <Folder Include="Players\" />
+    <Folder Include="ForEachHelpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\TicTacToeLogic\Exceptions\GameException.cs">
+      <Link>Exceptions\GameException.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Mappers\SquareContentMapper.cs">
+      <Link>Mappers\SquareContentMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Mappers\WinnerMapper.cs">
+      <Link>Mappers\WinnerMapper.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Players\BasePlayer.cs">
+      <Link>Players\BasePlayer.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Players\RandomPlayer.cs">
+      <Link>Players\RandomPlayer.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Players\SimplePlayer.cs">
+      <Link>Players\SimplePlayer.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Board.cs">
+      <Link>Board.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\EnumHelpers.cs">
+      <Link>EnumHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Enumerations.cs">
+      <Link>Enumerations.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\Game.cs">
+      <Link>Game.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\ForEachHelpers\Lines.cs">
+      <Link>ForEachHelpers\Lines.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\ForEachHelpers\Players.cs">
+      <Link>ForEachHelpers\Players.cs</Link>
+    </Compile>
+    <Compile Include="..\TicTacToeLogic\ForEachHelpers\Squares.cs">
+      <Link>ForEachHelpers\Squares.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
