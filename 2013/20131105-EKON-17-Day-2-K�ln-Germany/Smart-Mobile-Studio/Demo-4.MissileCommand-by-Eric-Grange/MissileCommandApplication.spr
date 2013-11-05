@@ -1,0 +1,13 @@
+uses 
+  W3System, MissileCommand, GameEntities, GameLogic, GameMenu, GameScore,
+  GameScoreDialog, GamePanel;
+
+var Application: TApplication;
+try
+  InitVendorInfo;
+  Application := TApplication.Create;
+  Application.RunApp;
+except
+  on e: Exception do
+    ShowMessage(e.message);
+end;

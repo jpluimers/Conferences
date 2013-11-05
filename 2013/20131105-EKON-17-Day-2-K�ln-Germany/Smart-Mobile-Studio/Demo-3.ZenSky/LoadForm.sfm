@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-16"?>
+<SFM>
+  <W3Form clsid="TW3Form">
+    <name>LoadForm</name>
+    <left>0</left>
+    <top>0</top>
+    <width>200</width>
+    <height>64</height>
+    <enabled>1</enabled>
+    <visible>1</visible>
+    <angle>0</angle>
+    <border.radius>0</border.radius>
+    <alpha.blend>0</alpha.blend>
+    <opacity>255</opacity>
+    <zoom>0</zoom>
+    <style.name>TW3Form</style.name>
+    <tag.value>0</tag.value>
+    <color>clNone</color>
+    <transparent>0</transparent>
+    <children>
+      <W3Label clsid="TW3Label">
+        <name>W3Label1</name>
+        <left>32</left>
+        <top>24</top>
+        <width>200</width>
+        <height>24</height>
+        <enabled>1</enabled>
+        <visible>1</visible>
+        <angle>0</angle>
+        <border.radius>0</border.radius>
+        <alpha.blend>0</alpha.blend>
+        <opacity>255</opacity>
+        <zoom>0</zoom>
+        <style.name>TW3Label</style.name>
+        <tag.value>0</tag.value>
+        <color>clNone</color>
+        <transparent>0</transparent>
+        <text></text>
+      </W3Label>
+      <W3Label clsid="TW3Label">
+        <name>W3Label2</name>
+        <left>32</left>
+        <top>64</top>
+        <width>200</width>
+        <height>24</height>
+        <enabled>1</enabled>
+        <visible>1</visible>
+        <angle>0</angle>
+        <border.radius>0</border.radius>
+        <alpha.blend>0</alpha.blend>
+        <opacity>255</opacity>
+        <zoom>0</zoom>
+        <style.name>TW3Label</style.name>
+        <tag.value>0</tag.value>
+        <color>clNone</color>
+        <transparent>0</transparent>
+        <text></text>
+      </W3Label>
+      <W3Button clsid="TW3Button">
+        <name>btnNext</name>
+        <left>32</left>
+        <top>128</top>
+        <width>200</width>
+        <height>64</height>
+        <enabled>1</enabled>
+        <visible>0</visible>
+        <angle>0</angle>
+        <border.radius>0</border.radius>
+        <alpha.blend>0</alpha.blend>
+        <opacity>255</opacity>
+        <zoom>0</zoom>
+        <style.name>TW3Button</style.name>
+        <tag.value>0</tag.value>
+        <color>clNone</color>
+        <transparent>0</transparent>
+        <caption>Start demo</caption>
+      </W3Button>
+    </children>
+  </W3Form>
+</SFM>

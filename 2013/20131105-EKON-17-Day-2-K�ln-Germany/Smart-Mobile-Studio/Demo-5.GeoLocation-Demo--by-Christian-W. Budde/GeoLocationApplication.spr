@@ -1,0 +1,13 @@
+uses
+  W3System, W3Ctrls, W3Components, W3Forms, W3Application, MainForm;
+
+var Application: TW3CustomApplication;
+try
+  InitVendorInfo;
+  Application := TW3CustomApplication.Create;
+  Application.CreateForm(TForm1, True);
+  Application.RunApp;
+except
+  on e: Exception do
+    ShowMessage(e.message);
+end;
