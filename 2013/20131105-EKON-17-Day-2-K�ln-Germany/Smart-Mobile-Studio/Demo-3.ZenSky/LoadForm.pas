@@ -12,11 +12,12 @@ type
   private
      { Private methods }
     {$I 'LoadForm:intf'}
-    FImages:  Array of TW3Image;
-    FNames:   Array of String;
+    FImages:  array of TW3Image;
+    FNames:   array of String;
     FCounter: Integer;
-    Procedure ImageLoaded(sender:TObject);
-    Procedure HandleButtonClick(Sender:TObject);
+    procedure ImageLoaded(sender:TObject);
+    procedure HandleButtonClick(Sender:TObject);
+    procedure ResizeControls();
   protected
     { Protected methods }
     procedure FormActivated;override;
@@ -29,7 +30,7 @@ type
 implementation
 
 (* small helper function *)
-function ExtractFileName(Const aValue: String): String;
+function ExtractFileName(const aValue: String): String;
 var
   x:  Integer;
 begin
@@ -51,7 +52,8 @@ end;
 
 procedure TfrmLoader.InitializeObject;
 var
-  x:  Integer;
+  x: Integer;
+  Name: string;
 begin
   inherited;
   {$I 'LoadForm:impl'}
@@ -79,11 +81,14 @@ begin
   (* create equal number of image elements *)
   for x := 0 to FNames.length - 1 do
     FImages.add(TW3Image.Create(nil));
+//  for Name in FNames do
+//    FImages.add(TW3Image.Create(nil));
 end;
 
 procedure TfrmLoader.FormActivated;
 var
-  x:  Integer;
+  x: Integer;
+  Name: string;
 begin
   (* initiate async loading on all *)
   for x := 0 to FImages.Length - 1 do
@@ -91,6 +96,12 @@ begin
     FImages[x].OnLoad := ImageLoaded;
     FImages[x].LoadFromURL(FNames[x]);
   end;
+// 2.0 will allow for this:
+//  for Name in FNames do
+//  begin
+//    FImages[x].OnLoad := ImageLoaded;
+//    FImages[x].LoadFromURL(Name);
+//  end;
 end;
 
 procedure TfrmLoader.ImageLoaded(Sender:TObject);
@@ -106,14 +117,18 @@ begin
       w3label1.CSSClasses.Add('BlinkLabel'); //make it blink!
       w3label2.Caption := '';
       btnNext.Visible := True;
-    end else
-    (* update loader filename *)
-    w3Label2.Caption := ExtractFileName(TW3Image(sender).URL);
+      ResizeControls(); // resizes the button
+    end
+    else
+    begin
+      (* update loader filename *)
+      w3Label2.Caption := ExtractFileName(TW3Image(sender).URL);
+    end;
 
   end;
 end;
 
-Procedure TfrmLoader.HandleButtonClick(Sender:TObject);
+procedure TfrmLoader.HandleButtonClick(Sender:TObject);
 begin
   Application.GotoForm('Form1', TFormEntryEffect.feFromRight);
 end;
@@ -129,17 +144,22 @@ begin
 end;
  
 procedure TfrmLoader.Resize;
+begin
+  inherited;
+  ResizeControls();
+end;
+ 
+procedure TfrmLoader.ResizeControls;
 var
   dx: Integer;
 begin
-  inherited;
   w3label1.Width := self.width - w3label1.left * 2;
   w3label2.width := self.Width - w3label2.left * 2;
 
   dx := (Width div 2) - (btnNext.width div 2);
   btnNext.left := dx;
 end;
- 
+
 procedure TfrmLoader.StyleTagObject;
 begin
   //Custom styling
