@@ -99,7 +99,7 @@ Other frameworks and additions: http://stackoverflow.com/questions/18291/unit-te
 
 ## Unit tests aren't the only kinds of tests
 
-<img src="367px-Extreme_Programming.svg.png" /> <img src="AcceptanceVsIntegrationTests-small.png" />
+![Planning/Feedback Loops in Extreme Programming](367px-Extreme_Programming.svg.png "Planning/Feedback Loops in Extreme Programming") ![Acceptance-, Integration-, Unit- and End-to-End-Tests](AcceptanceVsIntegrationTests-small.png "Acceptance-, Integration-, Unit- and End-to-End-Tests")
 
 Images [WikiPedia: Extreme Programming](http://en.wikipedia.org/wiki/Extreme_programming) / [Jonas Bandi: Acceptance vs Integration Testing](http://blog.jonasbandi.net/2010/09/acceptance-vs-integration-tests.html)
 
