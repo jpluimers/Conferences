@@ -1,0 +1,133 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{73393656-01D7-4FBE-98DC-32B469617E94}</ProjectGuid>
+			<ProjectVersion>12.0</ProjectVersion>
+			<MainSource>VCLTestProject.dpr</MainSource>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>vclx;vcl;dbrtl;Rave76VCL;bdertl;rtl;vclactnband;xmlrtl;vcldb;vcldbx;dsnap;dsnapcon;TeeUI;TeeDB;Tee;adortl;vclib;ibxpress;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_120;Intraweb_100_120;VclSmp;vclie;websnap;webdsnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DataSnapServer;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;Jcl;rtlCommandParser;dclCommandParser;FIBPlus2009;FIBDBMidas2009;cxLibraryD12;dxCoreD12;dxsbD12;dxComnD12;cxEditorsD12;cxExtEditorsD12;cxPageControlD12;cxBarEditItemD12;dxBarD12;dxBarDBNavD12;dxBarExtDBItemsD12;dxBarExtItemsD12;dxRibbonD12;cxGridD12;cxSchedulerD12;cxSchedulerGridD12;cxTreeListD12;cxVerticalGridD12;dxmdsD12;dxSpellCheckerD12;cxSpreadSheetD12;dxDockingD12;dxNavBarD12;dxLayoutControlD12;dxLayoutControlcxEditAdaptersD12;cxPivotGridD12;cxPivotGridChartD12;cxPivotGridOLAPD12;dxdbtrD12;dxtrmdD12;dxorgcD12;dxdborD12;dxFlowChartD12;dcldxSkinsCoreD12;dxSkinsCoreD12;dxSkinscxScheduler3PainterD12;dxSkinscxPCPainterD12;dxSkinsdxBarPainterD12;dxSkinsdxLCPainterD12;dxSkinsdxNavBar2PainterD12;dxSkinBlackD12;dxSkinBlueD12;dxSkinCaramelD12;dxSkinCoffeeD12;dxSkinDarkSideD12;dxSkinGlassOceansD12;dxSkiniMaginaryD12;dxSkinLilianD12;dxSkinLiquidSkyD12;dxSkinLondonLiquidSkyD12;dxSkinMcSkinD12;dxSkinMoneyTwinsD12;dxSkinOffice2007BlackD12;dxSkinOffice2007BlueD12;dxSkinOffice2007GreenD12;dxSkinOffice2007PinkD12;dxSkinOffice2007SilverD12;dxSkinPumpkinD12;dxSkinsdxDLPainterD12;dxSkinsdxRibbonPainterD12;dxSkinSilverD12;dxSkinStardustD12;dxSkinSummer2008D12;dxSkinValentineD12;dxSkinXmas2008BlueD12;dxPSCoreD12;dxPSLnksD12;vclshlctrls;dxPScxCommonD12;dxPScxGrid6LnkD12;dxPScxPCProdD12;dxPScxPivotGrid2LnkD12;dxPScxScheduler3LnkD12;dxPScxSSLnkD12;dxPScxTLLnkD12;dxPScxVGridLnkD12;dxPSTeeChartD12;dxPSdxOCLnkD12;dxPSdxDBTVLnkD12;dxPSdxFCLnkD12;dxPSdxLCLnkD12;dxPSdxDBOCLnkD12;dxPScxExtCommonD12;dxPsPrVwAdvD12;dxPSDBTeeChartD12</DCC_UsePackage>
+			<DCC_DebugDCUs>true</DCC_DebugDCUs>
+			<DCC_ExeOutput>..\bin</DCC_ExeOutput>
+			<DCC_DependencyCheckOutputName>..\bin\VCLTestProject.exe</DCC_DependencyCheckOutputName>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_BplOutput>..\bin</DCC_BplOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_Platform>x86</DCC_Platform>
+			<DCC_DcuOutput>..\dcu</DCC_DcuOutput>
+			<DCC_N>false</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_DcpOutput>..\bin</DCC_DcpOutput>
+			<DCC_E>false</DCC_E>
+			<DCC_F>false</DCC_F>
+			<DCC_K>false</DCC_K>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="VCLTestProject.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="..\src\TestMainFormUnit.pas">
+				<Form>TestMainForm</Form>
+			</DCCReference>
+			<DCCReference Include="..\src\FieldHelperUnit.pas"/>
+			<DCCReference Include="..\src\BaseTypesUnit.pas"/>
+			<DCCReference Include="..\src\MathUnit.pas"/>
+			<DCCReference Include="..\src\FormatSettingsHelperUnit.pas"/>
+			<DCCReference Include="..\src\NullableIntegerStaticTextUnit.pas"/>
+			<DCCReference Include="..\src\NullableCurrencyStaticTextUnit.pas"/>
+			<DCCReference Include="..\src\NullableDoubleStaticTextUnit.pas"/>
+			<DCCReference Include="..\src\NumericStaticTextUnit.pas"/>
+			<DCCReference Include="..\src\NullablesUnit.pas"/>
+			<DCCReference Include="..\src\NullableWrappersUnit.pas"/>
+			<DCCReference Include="..\src\ControlUtilsUnit.pas"/>
+			<DCCReference Include="..\src\SetTypeInfoUnit.pas"/>
+			<DCCReference Include="..\src\RecordTypeInfoUnit.pas"/>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">VCLTestProject.dpr</Source>
+					</Source>
+					<Parameters>
+						<Parameters Name="UseLauncher">False</Parameters>
+						<Parameters Name="LoadAllSymbols">True</Parameters>
+						<Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+					</Parameters>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="C:\develop\ZschimmerUndSchwarz\Seals\SealsComponents\bin\SealsComponentsPackage.bpl">Seals  - Application Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\develop\ZschimmerUndSchwarz\Seals\ActiveMQ\components\bin\ActiveMQComponentsPackage.bpl">Seals - ActiveMQ components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcboffice2k120.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\bcbofficexp120.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dcloffice2k120.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\bin\dclofficexp120.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

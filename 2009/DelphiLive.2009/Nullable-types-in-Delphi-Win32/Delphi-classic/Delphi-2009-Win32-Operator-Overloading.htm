@@ -1,0 +1,370 @@
+<h1>Delphi operator overloading: table of operators, names, and some notes on usage and 'glitches'</h1>
+Operator overloading is a very nice feature of the Delphi language.
+However. the Delphi documentation on Operator overloading is not completely right.
+
+Below is my table of what I found out so far, and some notes.
+
+It is part of my "Nullable types in Delphi" session that I gave on <a href="http://wiert.wordpress.com/conferences-seminars-and-other-public-appearances/" target="_blank">some conferences</a>.
+The <a href="http://www.xs4all.nl/~jp/blog-dl/2009/DelphiLive.2009/DelphiLive.2009.Nullable-types-in-Delphi-Win32.Delphi-classic.published.zip" target="_blank">downloads for that session</a> contain more detailed information.
+
+This is just an abstract to get you going and a try to answer this <a href="http://stackoverflow.com/questions/1587777/what-kinds-of-operator-overloads-does-delphi-support" target="_blank">operator overloading question on Stackoverflow</a>.
+Download the full presentation to get more in depth information.
+
+Let me know if you need more information.
+<h1 style="font-size: 2em;">Notes</h1>
+<h2 style="font-size: 1.5em;">Operator overloading</h2>
+<h3>Add your own “behaviour” to operators</h3>
+<ul>
+	<li>Win32: Works only for records, not classes!</li>
+	<li>An operator and the operand(s)
+are being implemented worden by a “class operator”;
+this is a kind of class method with name and argumen(s)</li>
+</ul>
+Example:
+<ul>
+	<li>Multiplication X : = A * B;</li>
+	<li>Operator: *</li>
+	<li>Name: Multiply</li>
+	<li>Operands: 2 -&gt; two parameters</li>
+</ul>
+
+[sourcecode language="delphi"]
+type
+  TMyRecord = record
+    class operator Multiply(A, B: TMyRecord): TMyRecord;
+  end;
+[/sourcecode]
+
+<h3>Documentation is not correct!</h3>
+<ul>
+	<li><a href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/devcommon/operatoroverloads_xml.html" target="_blank">http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/devcommon/operatoroverloads_xml.html
+http://docwiki.embarcadero.com/RADStudio/2010/en/IDEIds03
+</a><a href="http://docwiki.embarcadero.com/RADStudio/en/Operator_Overloading_(Delphi)">http://docwiki.embarcadero.com/RADStudio/2010/en/Operator_Overloading</a>
+<a href="http://docwiki.embarcadero.com/RADStudio/XE/en/IDEIds03" target="_blank">http://docwiki.embarcadero.com/RADStudio/XE/en/IDEIds03</a>
+<a href="http://docwiki.embarcadero.com/RADStudio/XE2/en/IDEIds03" target="_blank">http://docwiki.embarcadero.com/RADStudio/XE2/en/IDEIds03</a>
+<a href="http://docwiki.embarcadero.com/RADStudio/XE3/en/IDEIds03" target="_blank">http://docwiki.embarcadero.com/RADStudio/XE3/en/IDEIds03</a></li>
+	<li>Win32 only records; .NET classes and records</li>
+	<li>BitwiseNot does not exist (use LogicalNot)
+As of Delphi XI, it has been fixed in some pages of the docs:
+<a href="http://docwiki.embarcadero.com/RADStudio/XE/en/Operator_Overloading" target="_blank">http://docwiki.embarcadero.com/RADStudio/XE/en/Operator_Overloading</a>
+<a href="http://docwiki.embarcadero.com/RADStudio/XE2/en/Operator_Overloading_(Delphi)" target="_blank">http://docwiki.embarcadero.com/RADStudio/XE2/en/Operator_Overloading_(Delphi)</a>
+<a href="http://docwiki.embarcadero.com/RADStudio/en/Operator_Overloading_(Delphi)" target="_blank">http://docwiki.embarcadero.com/RADStudio/en/Operator_Overloading_(Delphi)</a></li>
+	<li>At least 1 operand must be of the same type as your record data type:
+- for single operand operators, the operand must be of the record data type
+- for double operand operators, one or two operands must be of the record data type</li>
+	<li>The result type of the operator may be anything</li>
+</ul>
+Combining the rules of operator and result types, you can do magical things like <a href="http://members.adug.org.au/2012/08/17/dances-with-xml/" target="_blank">Dances with XML | Australian Delphi User Group Members</a>.
+<h3>Do not use Delphi 2006 with operator overloading</h3>
+Delphi 2007 fixed a number of bugs including this one: <a href="http://stackoverflow.com/questions/15145615/delphi-2006-wont-allow-const-parameters-of-type-record-within-record-method">Delphi 2006 wont allow const parameters of type record within record method? - Stack Overflow</a>.
+<h3>Watch the result type of comparison operators!</h3>
+Tips:
+<ul>
+	<li>Some operators should be overloaded pair-wise
+= and &lt;&gt;
+shl and shr
+&lt; and &gt;=
+&gt; and &lt;=
+dec and inc
++ and -
+/ and *
+div and mod</li>
+	<li>Prefer Explicit over Implicit operators
+<ul>
+	<li>Beware of the built-in type coercion (implicit operators)</li>
+	<li>e.g
+<ul>
+	<li>Byte to Integer;</li>
+	<li>Integer to Double;</li>
+	<li>Variants from/to anything!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>Table of operators</h1>
+<table border="0">
+<tbody>
+<tr>
+<td width="71" height="17"><strong>operator</strong></td>
+<td width="24"><strong>#</strong></td>
+<td width="108"><strong>usage</strong></td>
+<td width="137"><strong>name</strong></td>
+<td width="80"><strong>cagetory</strong></td>
+<td width="85"><strong>*</strong></td>
+</tr>
+<tr>
+<td height="17">and</td>
+<td>2</td>
+<td>R := A and B;</td>
+<td>BitwiseAnd</td>
+<td>bit</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">not</td>
+<td>1</td>
+<td>R := not A;</td>
+<td>//BitwiseNot</td>
+<td>bit</td>
+<td>glitch: does not exist!</td>
+</tr>
+<tr>
+<td height="17">or</td>
+<td>2</td>
+<td>R := A or B;</td>
+<td>BitwiseOr</td>
+<td>bit</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">xor</td>
+<td>2</td>
+<td>R := A xor B;</td>
+<td>BitwiseXor</td>
+<td>bit</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">() cast</td>
+<td>1</td>
+<td>R := TValue(A);</td>
+<td>Explicit</td>
+<td>conversion</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">:=</td>
+<td>1</td>
+<td>R := A;</td>
+<td>Implicit</td>
+<td>conversion</td>
+<td></td>
+</tr>
+<tr>
+<td height="17"><strong>operator</strong></td>
+<td><strong>#</strong></td>
+<td><strong>usage</strong></td>
+<td><strong>name</strong></td>
+<td><strong>category</strong></td>
+<td><strong>*</strong></td>
+</tr>
+<tr>
+<td height="17">round</td>
+<td>1</td>
+<td>R := Round(A);</td>
+<td>Round</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">trunc</td>
+<td>1</td>
+<td>R := Trunc(A);</td>
+<td>Trunc</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">and</td>
+<td>2</td>
+<td>R := A and B;</td>
+<td>LogicalAnd</td>
+<td>logical</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">not</td>
+<td>1</td>
+<td>R := not A;</td>
+<td>LogicalNot</td>
+<td>logical</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">or</td>
+<td>2</td>
+<td>R := A or B;</td>
+<td>LogicalOr</td>
+<td>logical</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">xor</td>
+<td>2</td>
+<td>R := A xor B;</td>
+<td>LogicalXor</td>
+<td>logical</td>
+<td></td>
+</tr>
+<tr>
+<td height="17"><strong>operator</strong></td>
+<td><strong>#</strong></td>
+<td><strong>usage</strong></td>
+<td><strong>name</strong></td>
+<td><strong>category</strong></td>
+<td><strong>*</strong></td>
+</tr>
+<tr>
+<td height="17">+</td>
+<td>2</td>
+<td>R := A + B;</td>
+<td>Add</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">/</td>
+<td>2</td>
+<td>R := A / B;</td>
+<td>Divide</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">div</td>
+<td>2</td>
+<td>R := A div B;</td>
+<td>IntDivide</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">mod</td>
+<td>2</td>
+<td>R := A mod B;</td>
+<td>Modulus</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">*</td>
+<td>2</td>
+<td>R := A * B;</td>
+<td>Multiply</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">-</td>
+<td>2</td>
+<td>R := A - B;</td>
+<td>Subtract</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17"><strong>operator</strong></td>
+<td><strong>#</strong></td>
+<td><strong>usage</strong></td>
+<td><strong>name</strong></td>
+<td><strong>category</strong></td>
+<td><strong>*</strong></td>
+</tr>
+<tr>
+<td height="17">shl</td>
+<td>2</td>
+<td>R := A shl B;</td>
+<td>LeftShift</td>
+<td>binary</td>
+<td>name is confusing</td>
+</tr>
+<tr>
+<td height="17">shr</td>
+<td>2</td>
+<td>R := A shr B;</td>
+<td>RightShift</td>
+<td>binary</td>
+<td>name is confusing</td>
+</tr>
+<tr>
+<td height="17">-</td>
+<td>1</td>
+<td>R := -A;</td>
+<td>Negative</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">+</td>
+<td>1</td>
+<td>R := +A;</td>
+<td>Positive</td>
+<td>binary</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">dec</td>
+<td>1</td>
+<td>Dec(A);</td>
+<td>Dec</td>
+<td>self</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">inc</td>
+<td>1</td>
+<td>Inc(A);</td>
+<td>Inc</td>
+<td>self</td>
+<td></td>
+</tr>
+<tr>
+<td height="17"><strong>operator</strong></td>
+<td><strong>#</strong></td>
+<td><strong>usage</strong></td>
+<td><strong>name</strong></td>
+<td><strong>category</strong></td>
+<td><strong>*</strong></td>
+</tr>
+<tr>
+<td height="17">=</td>
+<td>2</td>
+<td>R := A = B;</td>
+<td>Equal</td>
+<td>comparison</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">&gt;</td>
+<td>2</td>
+<td>R := A &gt; B;</td>
+<td>GreaterThan</td>
+<td>comparison</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">&gt;=</td>
+<td>2</td>
+<td>R := A &gt;= B;</td>
+<td>GreaterThanOrEqual</td>
+<td>comparison</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">&lt;</td>
+<td>2</td>
+<td>R := A &lt; B;</td>
+<td>LessThan</td>
+<td>comparison</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">&lt;=</td>
+<td>2</td>
+<td>R := A &lt;= B;</td>
+<td>LessThanOrEqual</td>
+<td>comparison</td>
+<td></td>
+</tr>
+<tr>
+<td height="17">&lt;&gt;</td>
+<td>2</td>
+<td>R := A &lt;&gt; B;</td>
+<td>NotEqual</td>
+<td>comparison</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+--jeroen

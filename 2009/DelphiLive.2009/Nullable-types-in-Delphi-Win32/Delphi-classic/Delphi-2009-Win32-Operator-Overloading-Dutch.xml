@@ -1,0 +1,335 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>JWP</Author>
+  <LastAuthor>Windows User</LastAuthor>
+  <Created>2008-10-04T14:31:42Z</Created>
+  <LastSaved>2008-10-04T15:25:41Z</LastSaved>
+  <Company>BO</Company>
+  <Version>15.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>15720</WindowHeight>
+  <WindowWidth>24780</WindowWidth>
+  <WindowTopX>480</WindowTopX>
+  <WindowTopY>90</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s24">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Bold="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="35" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:Width="45.75"/>
+   <Column ss:Width="10.5"/>
+   <Column ss:Width="73.5"/>
+   <Column ss:Width="95.25"/>
+   <Column ss:Width="52.5"/>
+   <Column ss:Width="56.25"/>
+   <Row ss:StyleID="s24">
+    <Cell><Data ss:Type="String">operator</Data></Cell>
+    <Cell><Data ss:Type="String">#</Data></Cell>
+    <Cell><Data ss:Type="String">gebruik</Data></Cell>
+    <Cell><Data ss:Type="String">naam</Data></Cell>
+    <Cell><Data ss:Type="String">categorie</Data></Cell>
+    <Cell><Data ss:Type="String">*</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">and</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A and B;</Data></Cell>
+    <Cell><Data ss:Type="String">BitwiseAnd</Data></Cell>
+    <Cell><Data ss:Type="String">bit</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">not</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := not A;</Data></Cell>
+    <Cell><Data ss:Type="String">//BitwiseNot</Data></Cell>
+    <Cell><Data ss:Type="String">bit</Data></Cell>
+    <Cell><Data ss:Type="String">bestaat niet</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">or</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A or B;</Data></Cell>
+    <Cell><Data ss:Type="String">BitwiseOr</Data></Cell>
+    <Cell><Data ss:Type="String">bit</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">xor</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A xor B;</Data></Cell>
+    <Cell><Data ss:Type="String">BitwiseXor</Data></Cell>
+    <Cell><Data ss:Type="String">bit</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">() cast</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := TValue(A);</Data></Cell>
+    <Cell><Data ss:Type="String">Explicit</Data></Cell>
+    <Cell><Data ss:Type="String">conversie</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">:=</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := A;</Data></Cell>
+    <Cell><Data ss:Type="String">Implicit</Data></Cell>
+    <Cell><Data ss:Type="String">conversie</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s24">
+    <Cell><Data ss:Type="String">operator</Data></Cell>
+    <Cell><Data ss:Type="String">#</Data></Cell>
+    <Cell><Data ss:Type="String">gebruik</Data></Cell>
+    <Cell><Data ss:Type="String">naam</Data></Cell>
+    <Cell><Data ss:Type="String">categorie</Data></Cell>
+    <Cell><Data ss:Type="String">*</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">round</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := Round(A);</Data></Cell>
+    <Cell><Data ss:Type="String">Round</Data></Cell>
+    <Cell><Data ss:Type="String">functie</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">trunc</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := Trunc(A);</Data></Cell>
+    <Cell><Data ss:Type="String">Trunc</Data></Cell>
+    <Cell><Data ss:Type="String">functie</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">and</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A and B;</Data></Cell>
+    <Cell><Data ss:Type="String">LogicalAnd</Data></Cell>
+    <Cell><Data ss:Type="String">logisch</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">not</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := not A;</Data></Cell>
+    <Cell><Data ss:Type="String">LogicalNot</Data></Cell>
+    <Cell><Data ss:Type="String">logisch</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">or</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A or B;</Data></Cell>
+    <Cell><Data ss:Type="String">LogicalOr</Data></Cell>
+    <Cell><Data ss:Type="String">logisch</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">xor</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A xor B;</Data></Cell>
+    <Cell><Data ss:Type="String">LogicalXor</Data></Cell>
+    <Cell><Data ss:Type="String">logisch</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s24">
+    <Cell><Data ss:Type="String">operator</Data></Cell>
+    <Cell><Data ss:Type="String">#</Data></Cell>
+    <Cell><Data ss:Type="String">gebruik</Data></Cell>
+    <Cell><Data ss:Type="String">naam</Data></Cell>
+    <Cell><Data ss:Type="String">categorie</Data></Cell>
+    <Cell><Data ss:Type="String">*</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">+</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A + B;</Data></Cell>
+    <Cell><Data ss:Type="String">Add</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String" x:Ticked="1">/</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A / B;</Data></Cell>
+    <Cell><Data ss:Type="String">Divide</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">div</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A div B;</Data></Cell>
+    <Cell><Data ss:Type="String">IntDivide</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">mod</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A mod B;</Data></Cell>
+    <Cell><Data ss:Type="String">Modulus</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">*</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A * B;</Data></Cell>
+    <Cell><Data ss:Type="String">Multiply</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">-</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A - B;</Data></Cell>
+    <Cell><Data ss:Type="String">Subtract</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s24">
+    <Cell><Data ss:Type="String">operator</Data></Cell>
+    <Cell><Data ss:Type="String">#</Data></Cell>
+    <Cell><Data ss:Type="String">gebruik</Data></Cell>
+    <Cell><Data ss:Type="String">naam</Data></Cell>
+    <Cell><Data ss:Type="String">categorie</Data></Cell>
+    <Cell><Data ss:Type="String">*</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">shl</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A shl B;</Data></Cell>
+    <Cell><Data ss:Type="String">LeftShift</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+    <Cell><Data ss:Type="String">verwarrend</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">shr</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A shr B;</Data></Cell>
+    <Cell><Data ss:Type="String">RightShift</Data></Cell>
+    <Cell><Data ss:Type="String">binair</Data></Cell>
+    <Cell><Data ss:Type="String">verwarrend</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">-</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := -A;</Data></Cell>
+    <Cell><Data ss:Type="String">Negative</Data></Cell>
+    <Cell><Data ss:Type="String">unair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">+</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">R := +A;</Data></Cell>
+    <Cell><Data ss:Type="String">Positive</Data></Cell>
+    <Cell><Data ss:Type="String">unair</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">dec</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">Dec(A);</Data></Cell>
+    <Cell><Data ss:Type="String">Dec</Data></Cell>
+    <Cell><Data ss:Type="String">self</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">inc</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="String">Inc(A);</Data></Cell>
+    <Cell><Data ss:Type="String">Inc</Data></Cell>
+    <Cell><Data ss:Type="String">self</Data></Cell>
+   </Row>
+   <Row ss:StyleID="s24">
+    <Cell><Data ss:Type="String">operator</Data></Cell>
+    <Cell><Data ss:Type="String">#</Data></Cell>
+    <Cell><Data ss:Type="String">gebruik</Data></Cell>
+    <Cell><Data ss:Type="String">naam</Data></Cell>
+    <Cell><Data ss:Type="String">categorie</Data></Cell>
+    <Cell><Data ss:Type="String">*</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">=</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A = B;</Data></Cell>
+    <Cell><Data ss:Type="String">Equal</Data></Cell>
+    <Cell><Data ss:Type="String">vergelijking</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">&gt;</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A &gt; B;</Data></Cell>
+    <Cell><Data ss:Type="String">GreaterThan</Data></Cell>
+    <Cell><Data ss:Type="String">vergelijking</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">&gt;=</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A &gt;= B;</Data></Cell>
+    <Cell><Data ss:Type="String">GreaterThanOrEqual</Data></Cell>
+    <Cell><Data ss:Type="String">vergelijking</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">&lt;</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A &lt; B;</Data></Cell>
+    <Cell><Data ss:Type="String">LessThan</Data></Cell>
+    <Cell><Data ss:Type="String">vergelijking</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">&lt;=</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A &lt;= B;</Data></Cell>
+    <Cell><Data ss:Type="String">LessThanOrEqual</Data></Cell>
+    <Cell><Data ss:Type="String">vergelijking</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">&lt;&gt;</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">R := A &lt;&gt; B;</Data></Cell>
+    <Cell><Data ss:Type="String">NotEqual</Data></Cell>
+    <Cell><Data ss:Type="String">vergelijking</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>-2</HorizontalResolution>
+    <VerticalResolution>0</VerticalResolution>
+   </Print>
+   <Selected/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <Sorting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Sort>categorie</Sort>
+  </Sorting>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

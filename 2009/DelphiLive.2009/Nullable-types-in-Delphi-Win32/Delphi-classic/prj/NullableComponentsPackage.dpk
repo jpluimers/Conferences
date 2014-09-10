@@ -1,0 +1,45 @@
+package NullableComponentsPackage;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  NullableDoubleStaticTextUnit in '..\src\NullableDoubleStaticTextUnit.pas',
+  NullableIntegerStaticTextUnit in '..\src\NullableIntegerStaticTextUnit.pas',
+  NullableCurrencyStaticTextUnit in '..\src\NullableCurrencyStaticTextUnit.pas',
+  NumericStaticTextUnit in '..\src\NumericStaticTextUnit.pas',
+  NullableWrappersUnit in '..\src\NullableWrappersUnit.pas',
+  ControlUtilsUnit in '..\src\ControlUtilsUnit.pas',
+  NullablesUnit in '..\src\NullablesUnit.pas',
+  SetTypeInfoUnit in '..\src\SetTypeInfoUnit.pas',
+  BaseTypesUnit in '..\src\BaseTypesUnit.pas',
+  MathUnit in '..\src\MathUnit.pas',
+  FormatSettingsHelperUnit in '..\src\FormatSettingsHelperUnit.pas',
+  ComponentRegistrationUnit in '..\src\ComponentRegistrationUnit.pas';
+
+end.
