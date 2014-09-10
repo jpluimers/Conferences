@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{9F9E1079-F89D-408B-9027-E47C88EEE391}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="SmarterDbCodePackage.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="VCLTestProject.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="SmarterDbCodePackage">
+			<MSBuild Projects="SmarterDbCodePackage.dproj"/>
+		</Target>
+		<Target Name="SmarterDbCodePackage:Clean">
+			<MSBuild Targets="Clean" Projects="SmarterDbCodePackage.dproj"/>
+		</Target>
+		<Target Name="SmarterDbCodePackage:Make">
+			<MSBuild Targets="Make" Projects="SmarterDbCodePackage.dproj"/>
+		</Target>
+		<Target Name="VCLTestProject">
+			<MSBuild Projects="VCLTestProject.dproj"/>
+		</Target>
+		<Target Name="VCLTestProject:Clean">
+			<MSBuild Targets="Clean" Projects="VCLTestProject.dproj"/>
+		</Target>
+		<Target Name="VCLTestProject:Make">
+			<MSBuild Targets="Make" Projects="VCLTestProject.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="SmarterDbCodePackage;VCLTestProject"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="SmarterDbCodePackage:Clean;VCLTestProject:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="SmarterDbCodePackage:Make;VCLTestProject:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>
