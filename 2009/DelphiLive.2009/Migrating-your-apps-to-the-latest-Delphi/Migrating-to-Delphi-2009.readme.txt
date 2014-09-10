@@ -1,0 +1,48 @@
+Dear Reader,
+
+
+Please find the slides and samples in three sub-directories:
+
+Delphi-5-to-2006
+----------------
+
+This describes a large migration done at Nationale Nederlanden.
+They are the insurance branch of ING, and did a massive migrtion.
+The migration was from Delphi 5 to Delphi 2006, Windows N4 to Windows XP and Windows Server 2003, new SQL Server, new Imaging workflow and a lot more.
+With a total of 100+ projects we managed to not have this project outsourced to India (they estimated 14000+ hours of work), but in The Netherlands.
+The final number of man hours was close to 5000 in less than 6 months time, which made management really happy.
+
+
+Delphi-2007-2009
+----------------
+
+This is based on an application migration in the optical business.
+They use a lot of forms and data modules.
+Our first basic migration took only 2 days.
+The estimated finalization (fixing all the loose ends) is estimated to cost about 1 week more.
+
+
+CrossTalk-beta
+--------------
+
+Shows you how to convert a simple CrossTalk program from Delphi 7 to Delphi 2009.
+
+
+
+Please let me know how your conversions go.
+
+
+Regards,
+
+
+Jeroen W. Pluimers - principal consultant
+better office benelux
+Pyreneeën 71
+1060 NP  Amsterdam
+The Netherlands
+Tel: +31 (20) 620 83 72
+Fax: +31 (20) 620 83 74
+http://www.better-office.nl
+
+
+
