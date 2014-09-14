@@ -9,4 +9,4 @@ Make a good note of the domain, username and password as you need it in both the
 Later on, this user also needs to get the correct permissions to the Continua CI Share and Folder.
 
 ##Step B00: add Continua CI Service Account user with rights to Continua CI Share and Folder
-![B00-add-ContinuaCI-Service-Account-user-with-rights-to-ContinuaCI-Share-Folder.png](Stage-B-Continua-CI-Prerequisites-Service-Account\B00-add-ContinuaCI-Service-Account-user-with-rights-to-ContinuaCI-Share-Folder.png)
+![B00-add-ContinuaCI-Service-Account-user-with-rights-to-ContinuaCI-Share-Folder.png](Stage-B-Continua-CI-Prerequisites-Service-Account/B00-add-ContinuaCI-Service-Account-user-with-rights-to-ContinuaCI-Share-Folder.png)
