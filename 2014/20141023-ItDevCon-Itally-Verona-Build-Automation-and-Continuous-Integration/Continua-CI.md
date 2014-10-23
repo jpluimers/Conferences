@@ -1,3 +1,9 @@
+# Continua CI: continuous integration of your builds, packaging, testing and deployment
+
+[Milan, Italy, 20141023: ITDevCon 2014](www.itdevcon.it/agenda#day_two)
+
+## Introduction
+
 I like [Continua CI](https://www.finalbuilder.com/continua-ci), especially because of how [feature rich it is](https://www.finalbuilder.com/continua-ci/feature-tour), the [FinalBuilder](https://www.finalbuilder.com/downloads/finalbuilder/finalbuilder-7-version-history) heritage, and  that the [pricing](https://www.finalbuilder.com/continua-ci/pricing) starts with free (as in [gratis](https://en.wikipedia.org/wiki/Gratis)) when you run a `1 server + 1 concurrent build on a local agent` setup.
 
 Oh and their customer service is awesome: you find a reproducible bug and [often they fix it within hours](https://plus.google.com/+JeroenPluimers/posts/1tyJsQjYhNY).
@@ -20,9 +26,9 @@ I've based a lot of this on the work I did for the [Spring4D](https://plus.googl
 
 > Note: it is hard to keep screenshots up to date, so neither [my articles with screenshots](https://github.com/jpluimers/Conferences/blob/master/2014/2014-Continua-CI-installation/2014-Continua-CI-installation.md), nor the [Continua CI - VSoft Technologies Documentation Wiki](http://wiki.finalbuilder.com/display/continua) will have completely accurate screenshots.
 
-# Installation
+## Installation
 
-## Download and install
+### Download and install
 
 [Downloading](https://www.finalbuilder.com/downloads/continuaci) is dead simple. I used the `x64` builds of the installer. 
 
@@ -30,11 +36,11 @@ I've based a lot of this on the work I did for the [Spring4D](https://plus.googl
 
 Just run the installer and complete the steps. The [installation screenshots are in a separate article](https://github.com/jpluimers/Conferences/blob/master/2014/2014-Continua-CI-installation/2014-Continua-CI-installation.md) as they are a bit dull.
 
-## Security of shares
+### Security of shares
 
 During the installation, a share is created with read-write access for the group Everyone. You probably want to confine this a bit further.
 
-## Inspect the installation
+### Inspect the installation
 
 After installing, [if the database cannot be connected to](https://www.finalbuilder.com/support/forums/aft/11575), you will see something similar to this at <http://localhost:8080/install/serviceunavailable>:
 
@@ -53,7 +59,7 @@ The [eventlog](https://en.wikipedia.org/wiki/Event_Viewer) will not contain clue
 *   `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ContinuaCIAgent`
 *   `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ContinuaCI`
 
-## First time configuration
+### First time configuration
 
 When the installation does come up, you end up at the Welcome page: <http://localhost:8080/install> where you have to configure an [Continua Administrator](https://www.google.com/search?q=&quot;Continua+Administrator&quot;+site%3Afinalbuilder.com) user. This is not explained well in the Continua CI documentation, so I just regard this as the [root user](https://en.wikipedia.org/wiki/Superuser) for Continua CI.
 
@@ -63,12 +69,12 @@ And you can optionally fine tune security by defining `users`, `groups` and ` ro
 
 | Security       | URL                                                                                                                                                                                            |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Users          | <http://80.100.143.119:58080/administration/users>                                        |
-| Groups         | <http://80.100.143.119:58080/administration/groups>                                     |
-| Roles          | <http://80.100.143.119:58080/administration/roles>                                        |
-| Access Control | <http://80.100.143.119:58080/administration/accesscontrollists> |
+| Users          | <http://localhost:8080/administration/users>                                        |
+| Groups         | <http://localhost:8080/administration/groups>                                     |
+| Roles          | <http://localhost:8080/administration/roles>                                        |
+| Access Control | <http://localhost:8080/administration/accesscontrollists> |
 
-## Upgrading can be done in-place
+### Upgrading can be done in-place
 
 The [Continua CI installers are smart enough to upgrade in-place](http://wiki.finalbuilder.com/display/continua/Upgrading) while keeping the configuration. But note they cannot do in-place downgrade.
 
@@ -77,7 +83,7 @@ This is where you can find the installed versions from the web-interface:
 *   Agents: <http://localhost:8080/administration/ci/agents/viewall>
 *   Server: <http://localhost:8080/administration/ci/collectors/properties>
 
-# Structure
+## Structure
 
 The organisational architecture of Continua CI is from `Global` through `Project` to `Config`.
 
@@ -91,7 +97,7 @@ Each level inherits from the parent level.
 
 ![Hierarchy: Global, Project, Config](https://www.finalbuilder.com/images/continua-ci/continua-architecture.png) 
 
-## Per level
+### Per level
 
 Below are the main things you edit at each level:
 
@@ -115,7 +121,7 @@ Note:
 > 
 > Read these two links for more information: [Variables](http://wiki.finalbuilder.com/display/continua/Variables) and [Variables, Objects &amp; Expressions](http://wiki.finalbuilder.com/pages/viewpage.action?pageId=655772).
 
-## Spring4D hierarchy
+### Spring4D hierarchy
 
 For Spring4D, we've chosen this global/project/configuration hierarchy:
 
@@ -125,20 +131,20 @@ For Spring4D, we've chosen this global/project/configuration hierarchy:
     *   Spring4D
 *   Configurations:
 
-| Config \ Delphi version | XE                     | XE2                     | XE3                     | XE4                             | XE5                             | XE6                             | XE7                             |
-|-------------------------|------------------------|-------------------------|-------------------------|---------------------------------|---------------------------------|---------------------------------|---------------------------------|
-| Win32.Debug             | DelphiXE.Win32.Debug   | DelphiXE2.Win32.Debug   | DelphiXE3.Win32.Debug   | DelphiXE4.Win32.Debug           | DelphiXE5.Win32.Debug           | DelphiXE6.Win32.Debug           | DelphiXE7.Win32.Debug           |
-| Win32.Release           | DelphiXE.Win32.Release | DelphiXE2.Win32.Release | DelphiXE3.Win32.Release | DelphiXE4.Win32.Release         | DelphiXE5.Win32.Release         | DelphiXE6.Win32.Release         | DelphiXE7.Win32.Release         |
-| Win64.Debug             | -                      | DelphiXE2.Win64.Debug   | DelphiXE3.Win64.Debug   | DelphiXE4.Win64.Debug           | DelphiXE5.Win64.Debug           | DelphiXE6.Win64.Debug           | DelphiXE7.Win64.Debug           |
-| Win64.Release           | -                      | DelphiXE2.Win64.Release | DelphiXE3.Win64.Release | DelphiXE4.Win64.Release         | DelphiXE5.Win64.Release         | DelphiXE6.Win64.Release         | DelphiXE7.Win64.Release         |
-| OSX32.Debug             | -                      | DelphiXE2.OSX32.Debug   | DelphiXE3.OSX32.Debug   | DelphiXE4.OSX32.Release         | DelphiXE5.OSX32.Debug           | DelphiXE6.OSX32.Debug           | DelphiXE7.OSX32.Debug           |
-| OSX32.Release           | -                      | DelphiXE2.OSX32.Release | DelphiXE3.OSX32.Release | DelphiXE4.OSX32.Release         | DelphiXE5.OSX32.Release         | DelphiXE6.OSX32.Release         | DelphiXE7.OSX32.Release         |
-| iOSSimulator.Debug      | -                      | -                       | -                       | -DelphiXE4.iOSSimulator.Debug   | -DelphiXE5.iOSSimulator.Debug   | DelphiXE6.iOSSimulator.Debug    | -DelphiXE7.iOSSimulator.Debug   |
-| iOSSimulator.Release    | -                      | -                       | -                       | -DelphiXE4.iOSSimulator.Release | -DelphiXE5.iOSSimulator.Release | -DelphiXE6.iOSSimulator.Release | -DelphiXE7.iOSSimulator.Release |
-| iOSDevice.Debug         | -                      | -                       | -                       | -DelphiXE4.iOSDevice.Debug      | -DelphiXE5.iOSDevice.Debug      | -DelphiXE6.iOSDevice.Debug      | -DelphiXE7.iOSDevice.Debug      |
-| iOSDevice.Debug         | -                      | -                       | -                       | -DelphiXE4.iOSDevice.Release    | -DelphiXE5.iOSDevice.Release    | -DelphiXE6.iOSDevice.Release    | -DelphiXE7.iOSDevice.Release    |
-| AndroidARM.Debug        | -                      | -                       | -                       | -                               | DelphiXE5.AndroidARM.Debug      | DelphiXE6.AndroidARM.Debug      | -DelphiXE7.AndroidARM.Debug     |
-| AndroidARM.Release      | -                      | -                       | -                       | -                               | -DelphiXE5.AndroidARM.Release   | -DelphiXE6.AndroidARM.Release   | -DelphiXE7.AndroidARM.Release   |
+| Config \ Delphi version | XE                       | XE2                       | XE3                       | XE4                               | XE5                               | XE6                               | XE7                               |
+|-------------------------|--------------------------|---------------------------|---------------------------|-----------------------------------|-----------------------------------|-----------------------------------|-----------------------------------|
+| `Win32.Debug`           | `DelphiXE.Win32.Debug`   | `DelphiXE2.Win32.Debug`   | `DelphiXE3.Win32.Debug`   | `DelphiXE4.Win32.Debug`           | `DelphiXE5.Win32.Debug`           | `DelphiXE6.Win32.Debug`           | `DelphiXE7.Win32.Debug`           |
+| `Win32.Release`         | `DelphiXE.Win32.Release` | `DelphiXE2.Win32.Release` | `DelphiXE3.Win32.Release` | `DelphiXE4.Win32.Release`         | `DelphiXE5.Win32.Release`         | `DelphiXE6.Win32.Release`         | `DelphiXE7.Win32.Release`         |
+| `Win64.Debug`           | -                        | `DelphiXE2.Win64.Debug`   | `DelphiXE3.Win64.Debug`   | `DelphiXE4.Win64.Debug`           | `DelphiXE5.Win64.Debug`           | `DelphiXE6.Win64.Debug`           | `DelphiXE7.Win64.Debug`           |
+| `Win64.Release`         | -                        | `DelphiXE2.Win64.Release` | `DelphiXE3.Win64.Release` | `DelphiXE4.Win64.Release`         | `DelphiXE5.Win64.Release`         | `DelphiXE6.Win64.Release`         | `DelphiXE7.Win64.Release`         |
+| `OSX32.Debug`           | -                        | `DelphiXE2.OSX32.Debug`   | `DelphiXE3.OSX32.Debug`   | `DelphiXE4.OSX32.Debug`           | `DelphiXE5.OSX32.Debug`           | `DelphiXE6.OSX32.Debug`           | `DelphiXE7.OSX32.Debug`           |
+| `OSX32.Release`         | -                        | `DelphiXE2.OSX32.Release` | `DelphiXE3.OSX32.Release` | `DelphiXE4.OSX32.Release`         | `DelphiXE5.OSX32.Release`         | `DelphiXE6.OSX32.Release`         | `DelphiXE7.OSX32.Release`         |
+| `iOSSimulator.Debug`    | -                        | -                         | -                         | -`DelphiXE4.iOSSimulator.Debug`   | -`DelphiXE5.iOSSimulator.Debug`   | `DelphiXE6.iOSSimulator.Debug`    | -`DelphiXE7.iOSSimulator.Debug`   |
+| `iOSSimulator.Release`  | -                        | -                         | -                         | -`DelphiXE4.iOSSimulator.Release` | -`DelphiXE5.iOSSimulator.Release` | -`DelphiXE6.iOSSimulator.Release` | -`DelphiXE7.iOSSimulator.Release` |
+| `iOSDevice.Debug`       | -                        | -                         | -                         | -`DelphiXE4.iOSDevice.Debug`      | -`DelphiXE5.iOSDevice.Debug`      | -`DelphiXE6.iOSDevice.Debug`      | -`DelphiXE7.iOSDevice.Debug`      |
+| `iOSDevice.Debug`       | -                        | -                         | -                         | -`DelphiXE4.iOSDevice.Release`    | -`DelphiXE5.iOSDevice.Release`    | -`DelphiXE6.iOSDevice.Release`    | -`DelphiXE7.iOSDevice.Release`    |
+| `AndroidARM.Debug`      | -                        | -                         | -                         | -                                 | `DelphiXE5.AndroidARM.Debug`      | `DelphiXE6.AndroidARM.Debug`      | -`DelphiXE7.AndroidARM.Debug`     |
+| `AndroidARM.Release`    | -                        | -                         | -                         | -                                 | -`DelphiXE5.AndroidARM.Release`   | -`DelphiXE6.AndroidARM.Release`   | -`DelphiXE7.AndroidARM.Release`   |
 
 
 > Note: 
@@ -157,7 +163,7 @@ This is what we defined at each level:
         *   Build task
         *   Unit test task
 
-## C# / Delphi: getting the `rsvars.bat` / `vsvars32.bat` environment variable info
+### C# / Delphi: getting the `rsvars.bat` / `vsvars32.bat` environment variable info
 
 When building C# or Delphi programs using [msbuild](https://en.wikipedia.org/wiki/MSBuild), you normally first run [`vsvars32.bat`](http://msdn.microsoft.com/en-us/library/1700bbwd.aspx) or [`rsvars.bat`](https://www.google.com/search?q=rsvars.bat) to select for which Visual Studio or Delphi version you want to setup environment variables.
 
@@ -198,7 +204,7 @@ You then enter these differences in your [msbuild action Environment Variables](
     BDSLIB=$Agent.Delphi.XE6.Path$\lib
     BDSINCLUDE=$Agent.Delphi.XE6.Path$\include
 
-## Property Collectors
+### Property Collectors
 
 As mentioned above, Delphi projects normally require `rsvars.bat` from the right Delphi version being called. Describing how to create the environment variables is in [Building Delphi projects with Continua CI](https://www.finalbuilder.com/resources/blogs/postid/695/building-delphi-projects-with-continua-ci),
 
@@ -206,31 +212,31 @@ The process uses [Property Collectors](http://wiki.finalbuilder.com/display/cont
 
 For Delphi, the below keys are defined (similar keys exist for many other tools like Visual Studio, msbuild, Git, Mercurial, etc):
 
-| **Namespace** | **Properties** | **Run On** | **Find the value of 'RootDir' in the registry key:** |
-|---------------|----------------|------------|------------------------------------------------------|
-| Delphi.2005   | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Borland\BDS\3.0'.       |
-| Delphi.2006   | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Borland\BDS\4.0'.       |
-| Delphi.2007   | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Borland\BDS\5.0'.       |
-| Delphi.2009   | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\CodeGear\BDS\6.0'.      |
-| Delphi.2010   | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\CodeGear\BDS\7.0'.      |
-| Delphi.7      | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Borland\Delphi\7.0'.    |
-| Delphi.XE     | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\8.0'.   |
-| Delphi.XE2    | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\9.0'.   |
-| Delphi.XE3    | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\10.0'.  |
-| Delphi.XE4    | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\11.0'.  |
-| Delphi.XE5    | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\12.0'.  |
-| Delphi.XE6    | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\14.0'.  |
-| Delphi.XE7    | Path           | Agent      | 'HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\15.0'.  |
+| **Namespace**   | **Properties** | **Run On** | **Find the value of 'RootDir' in the registry key:** |
+|-----------------|----------------|------------|------------------------------------------------------|
+| `Delphi.2005`   | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Borland\BDS\3.0`        |
+| `Delphi.2006`   | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Borland\BDS\4.0`        |
+| `Delphi.2007`   | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Borland\BDS\5.0`        |
+| `Delphi.2009`   | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\CodeGear\BDS\6.0`       |
+| `Delphi.2010`   | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\CodeGear\BDS\7.0`       |
+| `Delphi.7`      | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Borland\Delphi\7.0`     |
+| `Delphi.XE`     | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\8.0`    |
+| `Delphi.XE2`    | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\9.0`    |
+| `Delphi.XE3`    | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\10.0`   |
+| `Delphi.XE4`    | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\11.0`   |
+| `Delphi.XE5`    | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\12.0`   |
+| `Delphi.XE6`    | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\14.0`   |
+| `Delphi.XE7`    | `Path`         | `Agent`    | `HKEY_LOCAL_MACHINE\Software\Embarcadero\BDS\15.0`   |
 
 You will find these as properties on your agent at a path like <http://localhost:8080/administration/ci/agents/view/{GUID}#properties> which you reach by clicking on [View] after each agent at <http://localhost:8080/administration/ci/agents/viewall>.
 
-# Building with msbuild
+## Building with msbuild
 
 For both Delphi and C# projects, you usually use an [msbuild action](http://wiki.finalbuilder.com/display/continua/MSBuild+Action), so that's what you will see in the next steps.
 
 Note that if you [combine multiple msbuild actions in one configuration, they will see each others results](https://www.finalbuilder.com/support/forums/aft/13068), which might be bad or good, depending on your objective.
 
-## Building Delphi projects
+### Building Delphi projects
 
 From the command-line, the Spring4D build commands to build with Delphi XE are these:
 
@@ -279,33 +285,33 @@ So the trick is to convert these parameters and environment variables to Continu
         /p:"DCC_Define=CONSOLE_TESTRUNNER"
         /l:FileLogger,Microsoft.Build.Engine;logfile="Logs\DelphiXE.Win32.Debug.MSBuildLog.txt" 
 
-### Configuring the Project Variables
+#### Configuring the Project Variables
 
-| Name           | Description | Value                | Variable Type |
-|----------------|-------------|----------------------|---------------|
-| RepositoryRoot | -           | $Source.spring4djwp$ | Expression    |
+| Name             | Description | Value                  | Variable Type   |
+|------------------|-------------|------------------------|-----------------|
+| `RepositoryRoot` | -           | `$Source.spring4djwp$` | `Expression`    |
 
-### Configuring the Stage Variables
+#### Configuring the Stage Variables
 
 Some values (like Debug, Win32) above are used multiple times, so they are excellent candidates to become variables.
 
 So create these Variables and values:
 
-| Name          | Description                                                                           | Value                   | Variable Type | Prompt Type     |
-|---------------|---------------------------------------------------------------------------------------|-------------------------|---------------|-----------------|
-| BDSRoot       | The Delphi Agent to use: $Agent.Delphi.XE.Path$, $Agent.Delphi.XE#.Path$ where #=2..7 | $Agent.Delphi.XE7.Path$ | Expression    | Text            |
-| Configuration | Configuration: Debug or Release                                                       | Release                 | Text          | Dropdown Select |
-| DCC_Define    | Always CONSOLE_TESTRUNNER to allow,NUnit XML compatible output from the unit tests.   | CONSOLE_TESTRUNNER      | Text          | Text            |
-| DelphiVersion | Automatically computed.                                                               | -                       | Text          | Text            |
-| Platform      | Platform value to build for:,Win32, Win64, OSX32, iOSSimulator, iOSDevice, AndroidARM | Win64                   | Text          | Dropdown Select |
-| TargetVersion | XE or XE# where #=1..7                                                                | XE7                     | Text          | Text            |
+| Name            | Description                                                                                       | Value                     | Variable Type | Prompt Type       |
+|-----------------|---------------------------------------------------------------------------------------------------|---------------------------|---------------|-------------------|
+| `BDSRoot`       | The Delphi Agent to use: `$Agent.Delphi.XE.Path$`, `$Agent.Delphi.XE#.Path$` where `#`=`2`..`7`   | `$Agent.Delphi.XE7.Path$` | Expression    | `Text`            |
+| `Configuration` | Configuration: `Debug` or `Release`                                                               | `Release`                 | Text          | `Dropdown Select` |
+| `DCC_Define`    | Always `CONSOLE_TESTRUNNER` to allow `NUnit` XML compatible output from the unit tests.           | `CONSOLE_TESTRUNNER`      | Text          | `Text`            |
+| `DelphiVersion` | Automatically computed.                                                                           | -                         | Text          | `Text`            |
+| `Platform`      | Platform value to build for: `Win32`, `Win64`, `OSX32`, `iOSSimulator`, `iOSDevice`, `AndroidARM` | `Win64`                   | Text          | `Dropdown Select` |
+| `TargetVersion` | `XE` or `XE#` where `#`=`1`..`7`                                                                  | `XE7`                     | Text          | `Text`            |
 
 Later on (in the various msbuild tabs), when you want to use the values, just surround the variable names with percent signs. So:
 
 *   `%Configuration%==Debug`
 *   `%Platform%==Win32`
 
-### Configure the main msbuild tab
+#### Configure the main msbuild tab
 
 Set these entries on the main msbuild tab:
 
@@ -329,7 +335,7 @@ The reason is that the working directory will include the slug name of your repo
 
 The msbuild version for Delphi XE should be 2.0 or higher. Higher versions give more detailed output (which you can increase in the Options tab using the Verbosity option that ranges from Quited, through Minimal, Normal and Detailed through Diagnostic which you will need for hard to trace build issues).
 
-### Configuring the properties
+#### Configuring the properties
 
 Except for the "Config" parameter, any /p parameter passed to msbuild goes into a property:
 
@@ -344,20 +350,20 @@ Finally (and when using Spring4D only for Delphi XE, but for other projects also
 
 > `DelphiLibraryPath=$Agent.Delphi.XE.Path$\Lib\%Platform%\%Configuration%`
 
-### Configuring environment
+#### Configuring environment
 
 The environment variables will not be fully hard coded: they are all based on the $Agent.Delphi.XE.Path$ property form the property collector on this agent.
 
 > `BDS=$Agent.Delphi.XE.Path$`
 
-### Configure the stage requirement: check Delphi XE is there
+#### Configure the stage requirement: check Delphi XE is there
 
 To ensure that a specific Delphi version is indeed available on your Agent, you have to configure an [Agent Requirement](http://wiki.finalbuilder.com/display/continua/Agent+Requirements). The documentation about it is very flimsy, but [Building Delphi projects with Continua CI](https://www.finalbuilder.com/resources/blogs/postid/695/building-delphi-projects-with-continua-ci).
 
 In our case, it comes down to configure this requirement:
 > `$Agent.Delphi.XE$    requirement    Exists`
 
-### Unused environment variables
+#### Unused environment variables
 
 These environment variables might be used, but not by all builds, so they were not needed to get Spring4D built:
 
@@ -372,7 +378,7 @@ These environment variables might be used, but not by all builds, so they were n
     
 Path is not used, as ContinuaCI takes care of that. FrameworkDir and FrameworkVersion is not used because that depends on the MSBuild version used.
 
-### Specify the `DelphiLibraryPath` in MSBuild
+#### Specify the `DelphiLibraryPath` in MSBuild
 
 Note: in the below section, `8.0` is for `Delphi XE`, but the general part holds for any Delphi version.
 
@@ -411,7 +417,7 @@ If you don't have the `DelphiLibraryPath` right, you get error messages in the b
 *   `On packages: [Fatal: E2202 Required package 'rtl' not found](https://www.google.com/search?q=%22Fatal%3A%20E2202%20Required%20package%20)`
 *   `On projects: [Fatal: F1027 Unit not found: 'System.pas' or binary equivalents (.dcu)](https://www.google.com/search?q=%22Fatal%3A+F1027+Unit+not+found%3A+)`
 
-### Android manifest errors
+#### Android manifest errors
 
 To prevent errors like these:
 
@@ -421,11 +427,11 @@ To prevent errors like these:
 
 further research is needed. This is why the iOS and Android projects do not build on the build server yet.
 
-## Building C# projects
+### Building C# projects
 
 C# projects requires `vsvars32.bat` being called
 
-### Unit testing Delphi projects
+#### Unit testing Delphi projects
 
 Continua CI requires unit testing projects to emit NUnit XML compatible output (there is even an [XSD defining NUnit XML results](http://stackoverflow.com/questions/3878018/xsd-for-the-xml-file-that-nunit-uses)).
 
@@ -437,14 +443,14 @@ It's not been updated in a while and may not be producing 100% correct xml but i
 
 If your own unit testing framework emits XML, you could use XSLT to map to NUnit compatible XML (just like you could [use XSLT to post-process NUnit output](http://stackoverflow.com/questions/2222203/is-it-possible-to-customize-nunit-xml-output)).
 
-### Notes
+#### Notes
 
 *   Continua CI works better with Git than Mercurial/HG.
 *   Same for GitHub versus BitBucket: pull-requests support in GitHub is better than in BitBucket: [Building GitHub Pull Requests with Continua CI](https://www.finalbuilder.com/resources/blogs/postid/700/building-github-pull-requests-with-continua-ci).
 
 --jeroen
 
-# Further reading
+## Further reading
 
 *   [Building Delphi projects with Continua CI](https://www.finalbuilder.com/resources/blogs/postid/695/building-delphi-projects-with-continua-ci).
 *   [Integrating DUnitX Unit Testing with Continua CI](https://www.finalbuilder.com/language/en-au/resources/blogs/postid/699/integrating-dunitx-unit-testing-with-continua-ci).

@@ -1,6 +1,6 @@
 # Build Automation for Delphi Projects
 
-[Leiden, 20140911: Big Delphi Conference 2014 / Dutch Pascon](http://www.blaisepascal.eu/index.php?actie=DucthPascon/Info2014)
+[Milan, Italy, 20141023: ITDevCon 2014](www.itdevcon.it/agenda#day_one)
 
 ## Introduction
 
@@ -25,7 +25,11 @@ Difficulty level: 2 - intermediate.
 
 Easiest is to have a good version control system, preferably a Distributed Version Control system. [I've talked about that last year](http://wiert.me/2013/08/27/dutch-stop-of-the-rad-studio-in-action-live-event-september-7th-leiden-close-to-amsterdam/), so I won't go into details.
 
-<https://bitbucket.org/jeroenp/conferences/src/tip/2013/20130907-RAD-Studio-In-Action-PasCon-Leiden-Netherlands>
+<https://github.com/jpluimers/Conferences>
+
+From there, browse to the correct year and conference to end up here:
+
+<https://github.com/jpluimers/Conferences/tree/master/2014/20141023-ItDevCon-Itally-Verona-Build-Automation-and-Continuous-Integration>
 
 ### Building from the sources
 
@@ -72,9 +76,8 @@ Basically, MSBuild builds Targets from MSBuild project files. There are a few ba
 #### MSBuild references
 
 - [msbuild tag](http://stackoverflow.com/questions/tagged/msbuild) with 6500+ questions on StackOverflow (in fact there are many more [StackOverflow tags](http://stackoverflow.com/tags) for `MSBuild`, like [msbuild-propertygroup](http://stackoverflow.com/questions/tagged/msbuild-propertygroup))
--  
 - [EKON 16 MSBuild presentation](https://speakerdeck.com/phoenixhawk/ekon-16-msbuild) by [Sebastian Gingter](http://stackoverflow.com/users/199861/sebastian-p-r-gingter) (German, but you guys can all read that)
-- 2009: [Inside the Microsoft® Build Engine: Using MSBuild and Team Foundation Build (Pro-Developer)](http://www.amazon.com/Inside-Microsoft%C2%AE-Build-Engine-Pro-Developer/dp/B0085S10L2)
+- 2009: [Inside the MicrosoftÂ® Build Engine: Using MSBuild and Team Foundation Build (Pro-Developer)](http://www.amazon.com/Inside-Microsoft%C2%AE-Build-Engine-Pro-Developer/dp/B0085S10L2)
 - 2011: [Inside the Microsoft Build Engine: Using MSBuild and Team Foundation Build (2nd Edition) (Developer Reference)](http://www.amazon.com/Inside-Microsoft-Build-Engine-Foundation/dp/0735645248)
 - [MSDN Reference](http://msdn.microsoft.com/en-us/library/0k6kkbsd.aspx) on MSDN
 - [Practical .NET2 and C#2: An introduction to MSBuild](http://www.codeproject.com/Articles/12985/Practical-NET-and-C-An-introduction-to-MSBuild) CodeProject
@@ -409,7 +412,7 @@ Often you want to test on a system that is different from a build server to less
 
 ## `Spring4D`: Building using Continua CI
 
-Continua CI 1.5 got [released yesterday](http://wiert.me/2014/09/10/continua-ci-version-1-5-has-been-released-build-1-5-0-268-smaller-faster-loads-of-new-features-spring4d-xe7-builds-automated/) with for instance Delphi XE7 support.
+Continua CI 1.5 got [released in September 2014](http://wiert.me/2014/09/10/continua-ci-version-1-5-has-been-released-build-1-5-0-268-smaller-faster-loads-of-new-features-spring4d-xe7-builds-automated/) with for instance Delphi XE7 support.
 
 ### Installation
 
