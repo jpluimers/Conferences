@@ -97,7 +97,9 @@ Two most important frameworks:
 
 Other frameworks and additions: <http://stackoverflow.com/questions/18291/unit-testing-in-delphi-how-are-you-doing-it>
 
-## Unit tests always follow the same `[AAA](http://www.typemock.com/unit-test-patterns-for-netc#aaa)` pattern:
+## Some Unit Test patterns
+
+### Unit tests always follow the same `[AAA](http://www.typemock.com/unit-test-patterns-for-netc#aaa)` pattern:
 
 This is yet another [triple AAA](https://en.wikipedia.org/wiki/AAA) abbreviation:
 
@@ -110,6 +112,57 @@ The above is easier to remember than how the DUnit test generator phrases them:
       // TODO: Setup method call parameters
       ReturnValue := FSysUtilsFormat.FormatDateTime(Format, DateTime, AFormatSettings);
       // TODO: Validate method results
+
+In practice:
+
+- The Arrange can be long (and if you have parts of it duplicated: abstract them away in the methods of the test).
+- The Act should be short (max 5-10 lines of code).
+- The Assert should be really short (1 assert per test case).
+
+### Unit Tests should only test one aspect of the `Subject Under Test`
+
+This mean the Assert of the `AAA` should only test one thing and one thing only.
+
+So not like this:
+
+    procedure TestTRomanNumber2String.AddMatches;
+    begin
+      // http://mathworld.wolfram.com/RomanNumerals.html
+      // http://en.wikipedia.org/wiki/Roman_numerals
+      AddMatch(0, 'none');
+      AddMatch(1, 'I');
+      AddMatch(2, 'II');
+      AddMatch(3, 'III');
+    ...
+    end;
+
+But with separate methods for each test, or with separate attributes that initialize this test with different values.
+
+These attributes are present in DUnitX, but not in the stock DUnit.
+
+Stefan Glienke wrote an addition to DUnit that provides this: <http://stackoverflow.com/questions/8999945/can-i-write-parameterized-tests-in-dunit>
+
+### Separate the test registration from the test definition
+
+This holds for both DUnit and DUnitX.
+
+Example: `Spring4D\Tests\Source\Spring.TestRegistration.pas`
+
+### Unit Tests are a great way to discover and document an API
+
+One way of getting used to an external API is to write unit tests for it. It answers questions like these:
+
+- does it function the way you expect it to?
+- for a certain functionality to succeed, how should I AAA the API?
+
+The other way around, Unit Tests are a great way of providing "documentation" for your own API:
+
+- document expected calling patterns to your API that succeed and fail
+- emphasise the well and less well tested parts of the API
+
+While writing unit tests for your own API, you usually find that the API needs to change as it is not easy enough to use.
+
+So writing unit tests early on provides you with a great way of experiencing how well you designed your API and make it more usable in an early stage. 
 
 ## Unit tests aren't the only kinds of tests
 
