@@ -1,5 +1,9 @@
 # [Delphi Unit Testing](https://github.com/jpluimers/Conferences/blob/master/2014/20141103-EKON-German-Koln-Unit-Testing/Delphi-Unit-Testing.md)
 
+- Examples: <https://bitbucket.org/jeroenp/besharp.net>
+- Slides: <http://github.com/jpluimers/Conferences>
+- Blog: <http://wiert.me>
+
 ## Intro
 
 Lets start with two questions
@@ -60,7 +64,7 @@ Existing DUnit documentation in the online help.
 Bowling game kata in Delphi and DUnit
 
 - [20 minute Video on YouTube](http://www.youtube.com/watch?v=RmjQZN6BtwQ)
-- [code kata](http://en.wikipedia.org/wiki/Kata_(programming)) for which [many are based on TDD](http://blog.boyet.com/blog/blog/code-kata/)
+- [code kata](http://en.wikipedia.org/wiki/Kata_(programming%29) for which [many are based on TDD](http://blog.boyet.com/blog/blog/code-kata/)
 - [Bowling game kata by Uncle Bob (*that's the **real Bob***) Martin](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
 - [Chess game kata in Delphi and DUnit part 1](http://www.yanniel.info/2012/03/tdd-in-delphi-dunit-framework.html) and [part 2](http://www.yanniel.info/2012/12/refactoring-to-patterns-in-delphi.html)
 
