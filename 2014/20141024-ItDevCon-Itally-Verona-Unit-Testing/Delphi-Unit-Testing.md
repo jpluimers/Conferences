@@ -1,5 +1,11 @@
 # [Delphi Unit Testing](https://github.com/jpluimers/Conferences/blob/master/2014/20141023-ItDevCon-Itally-Verona-Unit-Testing/Delphi-Unit-Testing.md)
 
+[Milan, Italy, 20141024: ITDevCon 2014](http://www.itdevcon.it/agenda#day_two)
+
+- Examples: <https://bitbucket.org/jeroenp/besharp.net>
+- Slides: <http://github.com/jpluimers/Conferences>
+- Blog: <http://wiert.me>
+
 ## Intro
 
 Lets start with two questions

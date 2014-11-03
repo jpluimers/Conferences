@@ -1,6 +1,10 @@
 # Build Automation for Delphi Projects
 
-[Milan, Italy, 20141023: ITDevCon 2014](www.itdevcon.it/agenda#day_one)
+[Milan, Italy, 20141023: ITDevCon 2014](http://www.itdevcon.it/agenda#day_one)
+
+- Examples: <https://bitbucket.org/jeroenp/besharp.net>
+- Slides: <http://github.com/jpluimers/Conferences>
+- Blog: <http://wiert.me>
 
 ## Introduction
 
