@@ -1,4 +1,4 @@
-# [Delphi Unit Testing](https://github.com/jpluimers/Conferences/blob/master/2014/20141023-ItDevCon-Itally-Verona-Unit-Testing/Delphi-Unit-Testing.md)
+# [Delphi Unit Testing](https://github.com/jpluimers/Conferences/blob/master/2014/20141103-EKON-German-Koln-Unit-Testing/Delphi-Unit-Testing.md)
 
 ## Intro
 
@@ -75,27 +75,44 @@ Two most important frameworks:
 
 - [DUnit](http://dunit.sourceforge.net/): 
 	- originally written by Juancarlo Añez based on JUnit, with help from Kent Beck (yes, the Extreme Programming one). 
-	- Uses only classic Delphi language features (mainly classes, interfaces and inheritance). 
+	- Uses only classic Delphi language features (mainly `classes`, `inheritance` and `RTTI`).
+	     - Class performing tests needs to descend from `TTestCase` (from the `TestFramework` unit)
+	     - Methods performing tests need to be paramaterless and `published`
 	- Uses `Check*` methods to assert results are expected.
+	- Registration of test classes as suites through code like `RegisterTest(TestTCalculator.Suite)`
 	- Has a nice VCL GUI front-end.
 	- A rudimentary [FMX front-end is in the Spring4D repository](https://bitbucket.org/sglienke/spring4d/src/develop/Tests/Source/dUnit/). 
 	- Integrated in Delphi out-of-the-box since around Delphi 6.
 	- Wizard originally based on [DUnitWizard](http://www.xpro.com.au/Freeware/DUnitWizard.htm). 
-	- Is Open Source, currently on SourceForge.
+	- Is Open Source, currently on SourceForge: <http://dunit.sourceforge.net/>
     - [Several contributors](http://sourceforge.net/projects/dunit/).
+
 - [DUnitX](https://github.com/VSoftTechnologies/DUnitX): 
 	- originally written by [Vincent Parrett](https://plus.google.com/103070525516006807291/posts) of [FinalBuilder](http://www.finalbuilder.com/) (and [Continua CI](http://www.finalbuilder.com/continua-ci)) fame.
-	- Heavily depends on new Delphi language features like Generics and Attributes.
+	- Heavily depends on new Delphi language features like `Generics` and `Attributes`.
+	     - Class performing tests 
+	         - can descend from anything (like `TObject`)
+	         - are decorated with the `[TestFixture]` attribute
+	     - Methods performing tests 
+	         - can have parameters
+	         - are decorated with the `[Test]` attribute
 	- Uses `Assert` class to assert results are expected.
 	- Has a `DUnit` compatibility layer.
-	- Direct support for NUnit XML, continuous integration, and many other nifty features.
-	- Based on the DelphiMocks isolation framework.
-	- [Wizard](https://github.com/jpluimers/DUnitX/tree/master/Expert) by Robert Love supports Delphi 2010-XE6.
+	- Direct support for 
+	    - `NUnit` XML <http://www.nunit.org/docs/2.6.3/files> (currently Windows only)
+	    - continuous integration
+	    - many other nifty features
+	- Based on the `DelphiMocks` isolation framework.
+	- There is a [`DUnitX Wizard`](https://github.com/jpluimers/DUnitX/tree/master/Expert) by Robert Love supports Delphi 2010-XE6.
 	- Has a [G+ community](https://plus.google.com/communities/110602661860791972403).
-	- Is Open Source on GitHub.
+	- Is Open Source on GitHub: <https://github.com/VSoftTechnologies/DUnitX>
 	- About a [dozen contributors](https://github.com/VSoftTechnologies/DUnitX/graphs/contributors).
 
 Other frameworks and additions: <http://stackoverflow.com/questions/18291/unit-testing-in-delphi-how-are-you-doing-it>
+
+> Big wishes: 
+> - all these frameworks get together to merge and integrate their features.
+> - fix the Delphi IDE or the DUnit project generator so adding units doesn't mess up the .dpr file (See `DivMod` demo) 
 
 ## Some Unit Test patterns
 
@@ -140,13 +157,52 @@ But with separate methods for each test, or with separate attributes that initia
 
 These attributes are present in DUnitX, but not in the stock DUnit.
 
-Stefan Glienke wrote an addition to DUnit that provides this: <http://stackoverflow.com/questions/8999945/can-i-write-parameterized-tests-in-dunit>
+Stefan Glienke wrote an addition to DUnit in DSharp that provides this: <http://stackoverflow.com/questions/8999945/can-i-write-parameterized-tests-in-dunit>
 
 ### Separate the test registration from the test definition
 
 This holds for both DUnit and DUnitX.
 
 Example: `Spring4D\Tests\Source\Spring.TestRegistration.pas`
+
+### Testing memory leaks with `FastMM`
+
+#### `FastMM` in DUnit: 
+
+1. enable the `FASTMM` conditional define in the project
+2. ensure these units are on your search path: 
+    - `FastMM4`
+    - `FastMM4Messages`
+3. ensure either of these units is the first in your project uses list:
+    - `FastMM4`
+    - `FastMM4BootstrapUnit` (and add `$(BeSharpNet)\Native\Delphi\Library\FastMM` to the project search path)
+4. in your test, include this line:  
+    `FailsOnMemoryLeak := True;`
+
+An elaborate demo is in the `UnitTestLeak` unit (`$(BDS)\source\dUnit\examples\MemLeakDetect` directory, `LeakTestDemo.dpr` project)
+
+#### `FastMM` in DUnitX
+
+Is easier than in DUnit.
+
+1. enable the `USE_FASTMM4_LEAK_MONITOR` conditional define in the project
+2. in your test project or test unit, ensure you add this unit:
+    `DUnitX.MemoryLeakMonitor.FastMM4`
+3. optionally (for more detailed FastMM information):
+    1. ensure these units are on your search path (add `$(FastMM)` and `$(DUnitX)`, uses `Dependencies.bat` ... from `BeSharp.net`): 
+        - `FastMM4`
+        - `FastMM4Messages`
+    2. ensure either of these units is the first in your project uses list:
+        - `FastMM4`
+        - `FastMM4BootstrapUnit` (and add `$(BeSharpNet)\Native\Delphi\Library\FastMM` to the project search path)
+
+Has some glitches, see the comment in `DUnitX.MemoryLeaks.inc`: 
+
+    //NOTE : Memory leak tracking does not work very well at the moment, as it's
+    //reporting leaks when logging information during tests (calls to .Status etc).
+    {.$DEFINE USE_FASTMM4_LEAK_MONITOR}
+
+An elaborate demo in `$(DUnitX)\Tests\DUnitXTest_XE*.dproj`.
 
 ### Unit Tests are a great way to discover and document an API
 
