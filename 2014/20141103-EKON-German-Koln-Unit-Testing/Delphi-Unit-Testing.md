@@ -1,5 +1,7 @@
 # [Delphi Unit Testing](https://github.com/jpluimers/Conferences/blob/master/2014/20141103-EKON-German-Koln-Unit-Testing/Delphi-Unit-Testing.md)
 
+[Köln, Deutschland, 20141103: EKON 2014](http://entwickler-konferenz.de/2014/sessions)
+
 - Examples: <https://bitbucket.org/jeroenp/besharp.net>
 - Slides: <http://github.com/jpluimers/Conferences>
 - Blog: <http://wiert.me>
@@ -222,8 +224,27 @@ The other way around, Unit Tests are a great way of providing "documentation" fo
 
 While writing unit tests for your own API, you usually find that the API needs to change as it is not easy enough to use.
 
-So writing unit tests early on provides you with a great way of experiencing how well you designed your API and make it more usable in an early stage. 
+So writing unit tests early on provides you with a great way of experiencing how well you designed your API and make it more usable in an early stage.
 
+## Emitting XML from DUnit
+
+- Ant XML
+    - Existing `XMLTestRunner` unit
+        - "cross" platform
+        - no XML escaping
+        - fails when directory of `outputFile` does not exist
+- NUnit XML
+    - (Old) FinalBuilder `DUnit-XML` based on DUnit `XMLTestRunner`
+        - "cross" platform
+        - no XML escaping
+        - [succeeds](https://github.com/jpluimers/DUnit-XML.FinalBuilder/commit/380c843a03fb9182528c8f228820cddfd84100ff?diff=split) when directory of `outputFile` does not exist
+        - <https://github.com/vincentparrett/DUnit-XML>
+    - (New) VSoft `DUnit-XML`
+        - MSXML6 based (Windows only)
+        - therefore XML escaping
+        - [succeeds](https://github.com/VSoftTechnologies/DUnitX/commit/d84edbe00d90e41dc68a95fe154b80d20ba07d71) when directory of `outputFile` does not exist
+        - <https://github.com/VSoftTechnologies/DUnit-XML>
+ 
 ## Unit tests aren't the only kinds of tests
 
 ![Planning/Feedback Loops in Extreme Programming](367px-Extreme_Programming.svg.png "Planning/Feedback Loops in Extreme Programming") ![Acceptance-, Integration-, Unit- and End-to-End-Tests](AcceptanceVsIntegrationTests-small.png "Acceptance-, Integration-, Unit- and End-to-End-Tests")
@@ -239,6 +260,8 @@ Images [WikiPedia: Extreme Programming](http://en.wikipedia.org/wiki/Extreme_pro
 - [DelphiMocks](https://github.com/VSoftTechnologies/Delphi-Mocks): isolation framework. 
 - [NickDemoCode](https://bitbucket.org/NickHodges/nickdemocode): many demos by Nick Hodges
 - [BeSharp.net](https://bitbucket.org/jeroenp/besharp.net): various samples from Jeroen.
+- [FastMM git synced fork](https://bitbucket.org/jeroenp/fastmm): detecting memory leaks
+- [DUnit SVN](http://sourceforge.net/p/dunit/svn/HEAD/tree/): the classic unit testing framework
 
 You can fork the repositories, like I did with [bitbucket.org/jeroenp/delphi-unit-tests](https://bitbucket.org/jeroenp/delphi-unit-tests) and [github.com/jpluimers/DUnitX.git](https://github.com/jpluimers/DUnitX).
 
@@ -264,4 +287,5 @@ Use Process Explorer to verify these are set correctly.
 
 - [Code coverage](https://code.google.com/p/delphi-code-coverage/): still need to research this.
 - Research if the VCL GUI of DUnit can be used in DUnitX somehow.
+- DUnit compatibility layer of DUnitX.
 - How to get this MarkDown into a slideshow. [remarkjs.com](http://remarkjs.com/#1) or [biggie](http://www.macwright.org/biggie/) might work. Need to read [Casey Watts comparison on tooling](http://caseywatts.github.io/2012/12/12/markdown_to_slide_presentation/) and [this lifehacker post](http://lifehacker.com/biggie-creates-slides-with-markdown-in-minutes-656829887). (:
