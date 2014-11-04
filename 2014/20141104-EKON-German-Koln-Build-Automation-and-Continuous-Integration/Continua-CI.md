@@ -1,6 +1,6 @@
-# Continua CI: continuous integration of your builds, packaging, testing and deployment
+# [Continua CI: continuous integration of your builds, packaging, testing and deployment](https://github.com/jpluimers/Conferences/blob/master/2014/20141104-EKON-German-Koln-Build-Automation-and-Continuous-Integration/Continua-CI.md)
 
-[Milan, Italy, 20141023: ITDevCon 2014](www.itdevcon.it/agenda#day_two)
+[Köln, Deutschland, 20141103: EKON 2014](http://entwickler-konferenz.de/2014/sessions)
 
 ## Introduction
 
@@ -416,6 +416,12 @@ If you don't have the `DelphiLibraryPath` right, you get error messages in the b
 
 *   `On packages: [Fatal: E2202 Required package 'rtl' not found](https://www.google.com/search?q=%22Fatal%3A%20E2202%20Required%20package%20)`
 *   `On projects: [Fatal: F1027 Unit not found: 'System.pas' or binary equivalents (.dcu)](https://www.google.com/search?q=%22Fatal%3A+F1027+Unit+not+found%3A+)`
+
+#### Build stage
+
+As [guest users cannot see the stages yet](https://plus.google.com/+JeroenPluimers/posts/7dWFP7E7LPx), here is an example picture:
+
+![](Build-steps-in-Spring4D-Stage-ContinuaCI.png)
 
 #### Android manifest errors
 

@@ -1,8 +1,25 @@
-# Build Automation for Delphi Projects
+# [Build Automation for Delphi Projects](https://github.com/jpluimers/Conferences/blob/master/2014/20141104-EKON-German-Koln-Build-Automation-and-Continuous-Integration/Build-Automation.md)
 
-[Milan, Italy, 20141023: ITDevCon 2014](www.itdevcon.it/agenda#day_one)
+[Köln, Deutschland, 20141104: EKON 2014](http://entwickler-konferenz.de/2014/sessions)
+
+- Examples: <https://bitbucket.org/jeroenp/besharp.net>
+- Slides: <http://github.com/jpluimers/Conferences>
+- Blog: <http://wiert.me>
 
 ## Introduction
+
+### Shameless plug
+
+<http://www.amazon.com/Delphi-Cookbook-Daniele-Teti/dp/1783559586>
+
+Cheap. 50 examples of newer Delphi stuff. Accurate. 
+Buy it at 
+- [Packt](https://www.packtpub.com/application-development/delphi-cookbook): EUR 21 (eBook PDF/mobi/epub); EUR 34 (ebook + hardcopy). 
+- [Amazon](http://www.amazon.com/Delphi-Cookbook-Daniele-Teti/dp/1783559586): USD 18 (Kindle); USD 40 (hardcopy).
+
+VAT trick at Packt for electronic delivery: ensure your address in the USA. Then buy it. 
+
+![](http://ecx.images-amazon.com/images/I/51GzcWKTbzL.jpg)
 
 ### Abstract
 
@@ -25,11 +42,7 @@ Difficulty level: 2 - intermediate.
 
 Easiest is to have a good version control system, preferably a Distributed Version Control system. [I've talked about that last year](http://wiert.me/2013/08/27/dutch-stop-of-the-rad-studio-in-action-live-event-september-7th-leiden-close-to-amsterdam/), so I won't go into details.
 
-<https://github.com/jpluimers/Conferences>
-
-From there, browse to the correct year and conference to end up here:
-
-<https://github.com/jpluimers/Conferences/tree/master/2014/20141023-ItDevCon-Itally-Verona-Build-Automation-and-Continuous-Integration>
+Any version control is better than no version control a all. Even if you work alone.
 
 ### Building from the sources
 
@@ -60,6 +73,10 @@ In Delphi, these files are MSBuild projects:
 
 - `.dproj` Delphi Projects
 - `.grouproj` Project Groups
+
+> Generate `.groupproj` from a list of `.dproj` files
+> - <https://bitbucket.org/jeroenp/besharp.net/src/tip/Native/Delphi/Apps/Console/GenerateGroupProjConsoleProject>
+> - <https://bitbucket.org/jeroenp/besharp.net/src/tip/Native/Delphi/Scripts/GroupProj.xsd>
 
 MSBuild configuration from both the IDE and command-line is done through `$(parameters)` which can be environment variables. Hence you see `$(BDS)` a lot.
 
@@ -412,7 +429,7 @@ Often you want to test on a system that is different from a build server to less
 
 ## `Spring4D`: Building using Continua CI
 
-Continua CI 1.5 got [released in September 2014](http://wiert.me/2014/09/10/continua-ci-version-1-5-has-been-released-build-1-5-0-268-smaller-faster-loads-of-new-features-spring4d-xe7-builds-automated/) with for instance Delphi XE7 support.
+Continua CI 1.5 got [released in September 2014](http://wiert.me/2014/09/10/continua-ci-version-1-5-has-been-released-build-1-5-0-268-smaller-faster-loads-of-new-features-spring4d-xe7-builds-automated/) Delphi XE7 support.
 
 ### Installation
 
@@ -424,6 +441,6 @@ In theory you would only [need the command-line compilers, libraries and such](h
 
 ### Configuration
 
-A lot harder. See Blog post.
+A lot harder. See Blog post and [Continua CI markdown](Continua-CI.md).
 
 ### Demo.
