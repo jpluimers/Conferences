@@ -233,6 +233,7 @@ So writing unit tests early on provides you with a great way of experiencing how
         - "cross" platform
         - no XML escaping
         - fails when directory of `outputFile` does not exist
+            - Needs [`ForceDirectories`](http://wiert.me/2013/07/26/delphi-do-not-do-if-not-directoryexistspath-then-forcedirectoriespath/) call 
 - NUnit XML
     - (Old) FinalBuilder `DUnit-XML` based on DUnit `XMLTestRunner`
         - "cross" platform
