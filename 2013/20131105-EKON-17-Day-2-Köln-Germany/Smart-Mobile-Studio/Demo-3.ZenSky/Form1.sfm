@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-16"?>
+<SFM>
+  <W3Form clsid="TW3Form">
+    <name>Form1</name>
+    <left>0</left>
+    <top>0</top>
+    <width>200</width>
+    <height>64</height>
+    <enabled>1</enabled>
+    <visible>1</visible>
+    <angle>0</angle>
+    <border.radius>0</border.radius>
+    <alpha.blend>0</alpha.blend>
+    <opacity>255</opacity>
+    <zoom>0</zoom>
+    <style.name>TW3Form</style.name>
+    <tag.value>0</tag.value>
+    <color>clNone</color>
+    <transparent>0</transparent>
+  </W3Form>
+</SFM>

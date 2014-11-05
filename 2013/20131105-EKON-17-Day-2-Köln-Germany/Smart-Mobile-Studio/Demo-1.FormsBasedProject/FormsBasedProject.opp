@@ -1,0 +1,1002 @@
+<SMART>
+  <project clsid="TIDEProjectVisual">
+    <name>FormsBasedProject</name>
+    <author></author>
+    <company></company>
+    <major>0</major>
+    <minor>0</minor>
+    <revision>0</revision>
+    <editor clsid="TIDEProjectSavedState">
+      <editor clsid="TIDEEditorSavedState">
+        <tab filename="FormsBasedProject" />
+        <tab filename="MainForm" />
+        <tab filename="W3System" />
+        <tab filename="FormsBasedProjectApplication" />
+        <tab filename="Unit1" />
+        <tab filename="default.html" />
+      </editor>
+    </editor>
+    <options clsid="TIDEProjectOptions">
+      <use_emitdebuginfo>1</use_emitdebuginfo>
+      <use_obfuscation>0</use_obfuscation>
+      <use_codepacking>0</use_codepacking>
+      <use_rangechecking>1</use_rangechecking>
+      <use_instancechecking>1</use_instancechecking>
+      <use_conditionchecking>1</use_conditionchecking>
+      <use_loopchecking>1</use_loopchecking>
+      <use_noinlinemagics>0</use_noinlinemagics>
+      <use_nosourcelocation>0</use_nosourcelocation>
+      <use_nortti>0</use_nortti>
+      <use_smartlinking>1</use_smartlinking>
+      <use_sourcemap>0</use_sourcemap>
+      <use_assertions>1</use_assertions>
+      <use_optimize>1</use_optimize>
+      <use_closures>1</use_closures>
+      <use_devirtualize>1</use_devirtualize>
+      <use_generate_manifest>1</use_generate_manifest>
+      <use_serve_manifest>0</use_serve_manifest>
+      <use_bootstrap_except>1</use_bootstrap_except>
+      <use_css_external>0</use_css_external>
+      <use_verbosity>1</use_verbosity>
+      <use_css_theme>Android-Holo.css</use_css_theme>
+      <use_ro_rodl></use_ro_rodl>
+      <use_hints_level>1</use_hints_level>
+      <output_type>0</output_type>
+      <output_name></output_name>
+      <execute_type>0</execute_type>
+      <executeable_name></executeable_name>
+      <executeable_params></executeable_params>
+      <use_pre-build_script>0</use_pre-build_script>
+      <pre-build_script></pre-build_script>
+      <use_pre-link_script>0</use_pre-link_script>
+      <pre-link_script></pre-link_script>
+      <use_post-build_script>0</use_post-build_script>
+      <post-build_script></post-build_script>
+    </options>
+    <globals clsid="TIDEGlobals" />
+    <files>
+      <file clsid="TIDEProjectFileProjectSource">
+        <name>FormsBasedProjectApplication</name>
+        <created>2013-11-02T11:32:03.476Z</created>
+        <notes></notes>
+        <source>
+          <![CDATA[uses 
+  W3System, FormsBasedProject, Unit1;
+
+var Application: TApplication;
+try
+  InitVendorInfo;
+  Application := TApplication.Create;
+  Application.RunApp;
+except
+  on e: Exception do
+    ShowMessage(e.message);
+end;
+]]>
+        </source>
+      </file>
+      <file clsid="TIDEProjectFileSource">
+        <name>FormsBasedProject</name>
+        <created>2013-11-02T11:32:03.476Z</created>
+        <notes></notes>
+        <source>
+          <![CDATA[unit FormsBasedProject;
+
+interface
+
+uses 
+  w3system, w3components, w3forms, w3application, MainForm;
+
+type
+  TApplication = class(TW3CustomApplication)
+  private
+    { Private methods }
+    FForm1: TForm1;
+  public
+    { Public methods }
+    procedure ApplicationStarting; override;
+  end;
+
+implementation
+
+{ TApplication}
+
+procedure TApplication.ApplicationStarting;
+begin
+  // Add code above this line 
+  FForm1 := TForm1.Create(Display.View);
+  FForm1.Name := 'Form1';
+  RegisterFormInstance(FForm1, True);
+
+  inherited;
+end;
+
+
+end.
+]]>
+        </source>
+      </file>
+      <file clsid="TIDEProjectFileHTML">
+        <name>default.html</name>
+        <created>2013-11-02T11:32:03.531Z</created>
+        <notes></notes>
+        <source>
+          <![CDATA[<!DOCTYPE html>
+<html manifest="app.manifest">
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="format-detection" content="telephone=yes"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no"/>
+
+  <link rel="apple-touch-startup-image" href="%appbootimage%"/>
+  <link rel="apple-touch-icon" href="%appicon%"/>
+  <%stylecode%>
+  <title>%apptitle%</title>
+
+  <%rescode%>
+
+  <script type="text/javascript">
+  /* This prevents the window being moved by touches,
+     to give the impression of a native app */
+  document.ontouchmove = function(e)
+  { e.preventDefault(); }
+  </script>
+
+  <script type="text/javascript">
+  /* Note: If you build with the CSS as an external file,
+     the app may execute before the CSS has been properly loaded.
+     You may want to use a different bootstrap mechanism. jQuery
+     provides a good preloading mechanism for instance. */
+
+    function bootstrap() { %appcode% }
+    window.onload = function () { bootstrap(); }
+  </script>
+</head>
+
+<body></body>
+
+</html>
+]]>
+        </source>
+      </file>
+      <file clsid="TIDEProjectFileCSS">
+        <name>Android-Holo.css</name>
+        <created>2013-11-02T11:32:03.536Z</created>
+        <notes></notes>
+        <source>
+          <![CDATA[/*
+ * HOLO Dark Android Theme for Smart Mobile Studio
+ */
+<?pas
+
+{$define HOLO_DARK}
+{.$define HOLO_LIGHT} 
+
+const fontSizeSmall = '12px';
+const fontSizeMedium = '18px';
+
+{$ifdef HOLO_DARK }
+const colBackground = '#000';
+const colWindow = '#323232';
+const colBtnFace = '#5b5b5b';
+const colBtnFaceActive = '#32a5cf';
+const colToolBtn = '#77c5dd';
+const colText = '#FFF';
+const colListItemBorderBottom = '1px solid #3a3a3a';
+const btnBorderColor = '#939393 #565656 #333333 #565656';
+const btnBorderColorActive = '#69bddb #31a1c9 #2881a1 #31a1ca';
+{$endif}
+
+{$ifdef HOLO_LIGHT }
+const colBackground = '#000';
+const colWindow = '#FFF';
+const colBtnFace = '#d6d7d6';
+const colBtnFaceActive = '#50c0e9';
+const colToolBtn = '#0e90af';
+const colText = '#000';
+const colListItemBorderBottom = '#e0e0e0';
+const btnBorderColor = '#e3e3e3 #c9c9c9 #898989 #c9c9c9';
+const btnBorderColorActive = '#69bddb #49b8e1 #3a93b3 #49b8e1';
+{$endif}  
+
+?>
+html,
+body {
+  /* Android basics */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+
+  /* default to black screen */
+  background-color: <?pas=colBackground?>;
+
+  /* No overflow, means no scrolling */
+  overflow: hidden;
+}
+
+/* Apply to all elements */
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: none;
+
+  /* Define "normal" boxing */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+
+
+  /* no tap highlight color */
+	-webkit-tap-highlight-color: transparent;
+     -moz-tap-highlight-color: transparent;
+      -ms-tap-highlight-color: transparent;
+       -o-tap-highlight-color: transparent;
+          tap-highlight-color: transparent;
+
+  /* no border style by default */
+  -webkit-border-style: none;
+     -moz-border-style: none;
+      -ms-border-style: none;
+       -o-border-style: none;
+          border-style: none;
+
+  /* Turn off font resizing */
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+
+    -webkit-font-smoothing: always;
+       -moz-font-smoothing: always;
+        -ms-font-smoothing: always;
+            font-smoothing: always;
+
+	-webkit-user-select: none;
+
+  font-family: Roboto, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+button { background: none; }
+
+ul {
+  cursor: default;
+  list-style: none;
+  -moz-list-style: none;
+  font-size: <?pas=fontSizeSmall?>;
+}
+
+ul li {
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 8px;
+  border-bottom: 1px solid <?pas=colListItemBorderBottom?>;
+  cursor: hand;
+}
+
+ul li:active {
+  color: #fff;
+  background: #00b7ea;
+}
+
+/**
+ * TW3CustomControl
+ * @purpose TW3CustomControl control style
+ * @status done
+ */
+.TW3CustomControl {
+  cursor: default;
+  background-color: <?pas=colWindow?>;
+}
+
+/**
+ * TW3ScrollContentIndicator
+ * @purpose TW3ScrollContentIndicator style
+ * @status done
+ */
+.TW3ScrollContentIndicator {
+  margin: 0px;
+  padding: 0px;
+  background-color: #222222;
+  border: solid 1px #9A9A9A;
+}
+
+/**
+ * TW3CustomForm
+ * @purpose TW3CustomForm control style
+ * @status done
+ */
+.TW3CustomForm,
+.TW3Form {
+  /* This forces the browsers that support it to
+     use the GPU rather than CPU for movement */
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+       -o-transform: translateZ(0);
+
+	-webkit-user-select: none;
+
+  color: <?pas=colText?>;
+  background: <?pas=colWindow?>;
+}
+
+/**
+ * TW3BlockBox:
+ * In order to emulate modal dialogs we use
+ * a single DIV to cover the active form.
+ * This div prevents the user from clicking
+ * on the underlying controls - thus forcing
+ * the user to deal with the dialog, which is
+ * hosted as a child of the TW3BlockBox control
+ */
+
+.TW3BlockBox {
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(0, 0, 0, .50);
+}
+
+/**
+ * @purpose TW3AlertDialog control
+ * @status done
+ */
+.TW3AlertDialog {
+  color: <?pas=colText?>;
+  font-size: <?pas=fontSizeMedium?>;
+  background: <?pas=colWindow?>;
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+       -o-border-radius: 2px;
+
+  z-index: 1000;
+  padding: 10px;
+
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+/**
+ * @purpose TW3AlertDialog title & text
+ * @status done
+ * @todo It will be nice if there will be a style
+ *       for title separated from text
+ */
+.TW3AlertDialog .TW3LabelText {
+  color: <?pas=colText?>;
+  font-size: large;
+  font-weight: normal;
+}
+
+/**
+ * @purpose TW3AlertButton control
+ * @status done
+ */
+.TW3AlertButton {
+  font-size: <?pas=fontSizeSmall?>;
+  text-align: center;
+  text-decoration: none;
+  padding: 0;
+  color: <?pas=colText?>;
+  border: 1px solid #484848;
+}
+
+.TW3AlertButton:active { 
+  background: #64d1f2;
+}
+
+/**
+ * TW3Label
+ * @purpose TW3Label control style
+ * @status done
+ */
+.TW3Label, TW3LabelText {
+  opacity: 1.0;
+  font-size: <?pas=fontSizeSmall?>;
+  cursor: default;
+}
+
+.TW3Label:disabled,
+.TW3LabelText:disabled {
+  opacity: 0.5;
+}
+
+/**
+ * TW3Button
+ * @purpose TW3Button control style
+ * @status done
+ */
+.TW3Button {
+  color: <?pas=colText?>;
+  font-size: <?pas=fontSizeMedium?>;
+
+  background: <?pas=colBtnFace?>;
+
+  border: solid 1px;
+  border-color: <?pas=btnBorderColor?>;
+
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+       -o-border-radius: 2px;
+  border-radius: 2px;
+
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+
+  -webkit-text-size-adjust: auto;
+     -moz-text-size-adjust: auto;
+      -ms-text-size-adjust: auto;
+       -o-text-size-adjust: auto;
+  text-size-adjust: auto;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TW3Button:active:enabled {
+  background: <?pas=colBtnFaceActive?>;
+  border-color: <?pas=btnBorderColorActive?>;
+  color: white;
+
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3),
+              0px 0px 0px 4px rgba(50, 165, 207, 0.5);
+}
+
+.TW3Button:disabled { opacity: 0.50; }
+
+/**
+ * TW3EditBox
+ * TW3EditBox
+ * TW3ComboBox
+ * @purpose
+ * @status done
+ */
+.TW3Memo,
+.TW3EditBox,
+.TW3ComboBox {
+  border-bottom: 1px solid #b2b2b2;
+  resize: none;
+  -webkit-user-select: auto;
+}
+
+.TW3EditBox:focus { border-bottom: 1px solid #0097cd; }
+
+/**
+ * TW3CheckMark
+ * @purpose TW3CheckMark control style
+ * @status done
+ */
+.TW3CheckMark {
+  margin: 0px;
+  padding: 0px;
+}
+
+/**
+ * TW3ToolButton
+ * @purpose TW3ToolButton control style
+ * @status done
+ */
+.TW3ToolButton {
+  font-size: <?pas=fontSizeMedium?>;
+  color: <?pas=colText?>;
+
+  -webkit-text-size-adjust: auto;
+     -moz-text-size-adjust: auto;
+      -ms-text-size-adjust: auto;
+       -o-text-size-adjust: auto;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TW3ToolButton:active:enabled {
+  color: <?pas=colText?>;
+  background: <?pas=colToolBtn?>;
+}
+
+.TW3ToolButton:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/**
+ * TW3Toolbar
+ * @purpose TW3Toolbar control
+ * @status done
+ */
+.TW3Toolbar {
+  cursor: default;
+  background: #303030;
+}
+
+.TW3ToolbarButton,
+.TW3ToolbarButtonSelected {
+  color: <?pas=colText?>;
+  padding: 5px 5px 0 5px;
+
+  font-size: <?pas=fontSizeSmall?>;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TW3ToolbarButtonSelected {
+  padding: 5px 5px 0 5px;
+  border-bottom: 5px solid #0099cc;
+}
+
+  .TW3ToolbarButton:focus { border: 5px solid white; }
+
+  .TW3ToolbarButton:disabled { background-color: transparent; }
+
+/**
+ * TW3Panel
+ * @purpose TW3Panel control style
+ * @status done
+ */
+.TW3Panel {
+  cursor: inherited;
+  resize: none;
+  font-size: medium;
+  color: <?pas=colText?>;
+  background-color: <?pas=colWindow?>;
+}
+
+/**
+ * TW3ToggleSwitch
+ * @purpose TW3ToggleSwitch control style
+ * @status done
+ */
+.TW3ToggleSwitch {
+  font-size: <?pas=fontSizeSmall?>;
+  background-color: #e0e0e0;
+  color: white;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TW3ToggleOnLabel,
+.TW3ToggleOffLabel {
+  text-align: center;
+  cursor: default;
+}
+
+.TW3ToggleOnLabel {
+  background: #0e88b1;
+}
+
+.TW3ToggleOffLabel {
+  background: #676767;
+  color: <?pas=colText?>;
+}
+
+.TW3ToggleKnob {
+  border: solid 1px;
+  border-color: #939393 #565656 #333333 #565656;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+      -ms-border-radius: 1px;
+       -o-border-radius: 1px;
+  border-radius: 1px;
+
+  background: <?pas=colBtnFace?>;
+
+  color: <?pas=colText?>;
+
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+
+  -webkit-text-size-adjust: auto;
+     -moz-text-size-adjust: auto;
+      -ms-text-size-adjust: auto;
+       -o-text-size-adjust: auto;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.TW3ToggleKnob:hover { background: #e5e5e5; }
+
+/**
+ * TW3ListBox
+ * @purpose TW3ListBox control style
+ * @status done
+ */
+.TW3ListBox {
+  padding: 0;
+  font-size: <?pas=fontSizeSmall?>;
+  background: #fff;
+}
+
+.TW3ListBoxItemSelected {
+  color: #fff;
+  font-size: <?pas=fontSizeSmall?>;
+  background: #00b7ea;
+}
+
+/**
+ * TW3HeaderControl
+ * @purpose Style for TW3HeaderControl
+ * @status done
+ */
+.TW3HeaderControl {
+  cursor: default;
+	border-bottom: 2px solid #1b1b1b;
+  border-top: 1px solid #2d2d2d;
+  background: #222222;
+}
+
+  .TW3HeaderControl:disabled {
+    cursor: wait;
+    opacity: 0.5;
+  }
+
+/**
+ * TW3ProgressBar
+ * @purpose ProgressBar
+ * @status done
+ */
+.TW3ProgressBar,
+.TW3ProgressMeter {
+  overflow: hidden;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.TW3ProgressBar {
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.3) inset;
+  background: #4d4d4d;
+}
+
+/**
+ * TW3ProgressMeter
+ * @purpose Content of ProgressBar
+ * @status done
+ */
+.TW3ProgressMeter {
+  overflow: hidden;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+
+  background: #009FC7;
+  background: linear-gradient(to right,  #009fc7 0%,#00bbef 90%,#00bbef 100%);
+  background: -moz-linear-gradient(left,  #009fc7 0%, #00bbef 90%, #00bbef 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #009fc7), color-stop(90%,#00bbef), color-stop(100%,#00bbef));
+  background: -webkit-linear-gradient(left,  #009fc7 0%,#00bbef 90%,#00bbef 100%);
+  background: -o-linear-gradient(left,  #009fc7 0%,#00bbef 90%,#00bbef 100%);
+  background: -ms-linear-gradient(left,  #009fc7 0%,#00bbef 90%,#00bbef 100%);
+
+  box-shadow: 0px 0px 2px 0px #999 inset;
+
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+      -ms-border-radius: 1px;
+       -o-border-radius: 1px;
+}
+
+/**
+ * TW3Scrollbar
+ * @purpose Style for TW3Scrollbar
+ * @status done
+ */
+.TW3ScrollbarUpBtn,
+.TW3ScrollbarDownBtn,
+.TW3ScrollbarLeftBtn,
+.TW3ScrollbarRightBtn {
+  background: <?pas=colBtnFace?>;
+  overflow: hidden;
+}
+
+.TW3ScrollbarUpBtn:active,
+.TW3ScrollbarDownBtn:active,
+.TW3ScrollbarLeftBtn:active,
+.TW3ScrollbarRightBtn:active {
+  background: <?pas=colBtnFaceActive?>;
+
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3),
+              0px 0px 0px 4px rgba(50, 165, 207, 0.5);
+}
+
+.TW3ScrollbarDownBtn:hover,
+.TW3ScrollbarUpBtn:hover,
+.TW3ScrollbarLeftBtn:hover,
+.TW3ScrollbarRightBtn:hover {
+  cursor: pointer;
+}
+
+.TW3ScrollbarHandle {
+  background: <?pas=colBtnFaceActive?>;
+  overflow: hidden;
+}
+
+.TW3ScrollbarHandle:active {
+  box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 1);
+}
+
+.TW3ScrollbarHandle:Hover {
+  cursor: pointer;
+}
+
+.TW3HorizontalScrollbar,
+.TW3VerticalScrollbar {
+  background: white;
+
+  overflow: hidden;
+  -webkit-touch-callout: none;
+}
+
+.TW3HorizontalScrollbar {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(43%, rgba(0, 0, 0, 0)), color-stop(50%, #000), color-stop(57%, rgba(0, 0, 0, 0)));
+}
+
+.TW3VerticalScrollbar {
+  background: -webkit-gradient(linear, left top, right top, color-stop(43%, rgba(0, 0, 0, 0)), color-stop(50%, #000), color-stop(57%, rgba(0, 0, 0, 0)));
+}
+
+.TW3VerticalScrollbar:disabled,
+.TW3HorizontalScrollbar:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* =============================================
+ * Page Animation: BACKSCROLL
+ * ============================================= */
+
+@-webkit-keyframes BACKSCROLL {
+  0% {
+    -webkit-transform: translateZ(0);
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -557px 0%;
+    -webkit-transform: translateZ(0);
+  }
+}
+
+@-moz-keyframes BACKSCROLL {
+  0% {
+    -webkit-transform: translateZ(0);
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -557px 0%;
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* =============================================
+ * Page Animation: MOVE-LEFT
+ * ============================================= */
+
+@-webkit-keyframes MOVE-LEFT {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+    }
+}
+
+@-webkit-keyframes MOVE-OUT-LEFT {
+    0% {
+        -webkit-transform: translateX(0%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@-moz-keyframes MOVE-LEFT {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(0px);
+    }
+}
+
+
+@-moz-keyframes MOVE-OUT-LEFT {
+    0% {
+      -moz-transform: translateX(0%);
+      }
+    100% {
+      -moz-transform: translateX(-100%);
+      }
+}
+
+/* =============================================
+ * Page Animation: MOVE-Right
+ * ============================================= */
+
+@-webkit-keyframes MOVE-RIGHT {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+        visibility: none;
+    }
+}
+
+@-webkit-keyframes MOVE-OUT-RIGHT {
+    0% {
+        -webkit-transform: translateX(0%);
+    }
+    100% {
+        -webkit-transform: translateX(100%);
+        visibility: none;
+    }
+}
+
+@-moz-keyframes MOVE-RIGHT {
+    0% {
+        -moz-transform: translateX(-100%);
+    }
+    100% {
+        -moz-transform: translateX(0%);
+    }
+}
+
+@-moz-keyframes MOVE-OUT-RIGHT {
+    0% {
+        -moz-transform: translateX(0%);
+    }
+    100% {
+        -moz-transform: translateX(100%);
+        visibility: none;
+    }
+}
+
+/* =============================================
+ * Page Animation: MOVE-Right
+ * ============================================= */
+
+@-webkit-keyframes ROTATE-FOREVER {
+  from {
+    -webkit-transform: none;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes ROTATE-FOREVER {
+  from {
+    -moz-transform: none;
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+]]>
+        </source>
+      </file>
+      <file clsid="TIDEProjectFileForm">
+        <name>MainForm</name>
+        <created>2013-11-02T11:32:03.536Z</created>
+        <notes></notes>
+        <source>
+          <![CDATA[unit MainForm;
+
+interface
+
+uses 
+  w3system, w3graphics, w3components, w3forms, w3fonts, w3borders, w3application, W3Button;
+
+type
+  TForm1=class(TW3form)
+  private
+    { Private methods }
+    {$I 'MainForm:intf'}
+    procedure HelloWorldW3ButtonClick(Sender: TObject);
+  protected
+    { Protected methods }
+    procedure InitializeObject; override;
+    procedure FinalizeObject; override;
+    procedure StyleTagObject; reintroduce; virtual;
+    procedure Resize; override;
+  end;
+
+implementation
+
+{ TForm1}
+
+procedure TForm1.HelloWorldW3ButtonClick(Sender: TObject);
+begin
+  w3_ShowMessage('Hello World!');
+end;
+
+procedure TForm1.InitializeObject;
+begin
+  inherited;
+  {$I 'MainForm:impl'}
+  HelloWorldW3Button.OnClick := HelloWorldW3ButtonClick;
+end;
+ 
+procedure TForm1.FinalizeObject;
+begin
+  inherited;
+end;
+ 
+procedure TForm1.Resize;
+begin
+  inherited;
+end;
+ 
+procedure TForm1.StyleTagObject;
+begin
+  // Custom styling
+end;
+ 
+end.
+]]>
+        </source>
+        <design>
+          <![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<SFM>
+  <W3Form clsid="TW3Form">
+    <name>MainForm</name>
+    <left>0</left>
+    <top>0</top>
+    <width>200</width>
+    <height>64</height>
+    <enabled>1</enabled>
+    <visible>1</visible>
+    <angle>0</angle>
+    <border.radius>0</border.radius>
+    <alpha.blend>0</alpha.blend>
+    <opacity>255</opacity>
+    <zoom>1</zoom>
+    <style.name>TW3Form</style.name>
+    <tag.value>0</tag.value>
+    <color>clNone</color>
+    <transparent>0</transparent>
+    <children>
+      <W3Button clsid="TW3Button">
+        <name>HelloWorldW3Button</name>
+        <left>32</left>
+        <top>32</top>
+        <width>200</width>
+        <height>24</height>
+        <enabled>1</enabled>
+        <visible>1</visible>
+        <angle>0</angle>
+        <border.radius>0</border.radius>
+        <alpha.blend>0</alpha.blend>
+        <opacity>255</opacity>
+        <zoom>1</zoom>
+        <style.name>TW3Button</style.name>
+        <tag.value>0</tag.value>
+        <color>clRed</color>
+        <transparent>0</transparent>
+        <caption>Don&apos;t click me!</caption>
+      </W3Button>
+    </children>
+  </W3Form>
+</SFM>]]>
+        </design>
+      </file>
+      <file clsid="TIDEProjectFileSourceExternal">
+        <name>Unit1</name>
+        <created>2013-11-02T11:32:03.537Z</created>
+        <notes></notes>
+        <source>
+          <![CDATA[]]>
+        </source>
+        <filename>Unit1.pas</filename>
+      </file>
+    </files>
+  </project>
+</SMART>

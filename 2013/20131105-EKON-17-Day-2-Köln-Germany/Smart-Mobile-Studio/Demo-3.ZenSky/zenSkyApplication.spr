@@ -1,0 +1,12 @@
+uses 
+  W3System, zenSky, LoadForm, Form1;
+
+var Application: TApplication;
+try
+  InitVendorInfo;
+  Application := TApplication.Create;
+  Application.RunApp;
+except
+  on e: Exception do
+    ShowMessage(e.message);
+end;
