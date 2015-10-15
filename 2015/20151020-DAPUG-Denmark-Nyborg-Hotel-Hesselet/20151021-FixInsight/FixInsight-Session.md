@@ -14,7 +14,8 @@
 
 ## Getting started
 
-- [Download](http://sourceoddity.com/fixinsight/download.html): the file http://sourceoddity.com/download/FixInsight_2015.10_setup.exe
+- [Download](http://sourceoddity.com/fixinsight/download.html): the file
+http://sourceoddity.com/download/FixInsight_2015.10upd1_setup.exe (it got updated very recently).
 
 - Install:
     1. Quit all your Delphi instances
@@ -40,7 +41,7 @@
 
 - [Docs](http://sourceoddity.com/fixinsight/doc.html): we will see most of them in the session.
 
-The license works for... so you can play with it after the workshop.  
+The license until early November so you can play with it after the workshop.  
 If you like it, use the coupon (ask Jens) to get a 20% discount when you [buy](http://sourceoddity.com/fixinsight/order.html) it.
 
 ## Why
@@ -58,6 +59,8 @@ This saves both time and improves your quality.
 FixInsight is a smart wrapper around the [DelphiAST](https://github.com/RomanYankovsky/DelphiAST) parser.
 
 It parses about any Delphi language construct you can imagine. If it doesn't, report a bug (see below how).
+
+Then it reports them in the standard Delphi messages pane, similar to what the compiler does.
 
 ## Example
 
@@ -87,12 +90,12 @@ Like any software, FixInsight can have bugs.
 
 To report bugs:
 
-    0. Within Delphi
-    1. Choose the `Help` menu
-    2. Click on `About FixInsight`
-    3. In the `About FixInsight` dialog enable the click `Debug Mode` checkbox.
-    4. Run your FixInsight as normal.
-    5. Copy the `*.filog` file in your project folder and post it as feed back to http://sourceoddity.com/
+0. Within Delphi
+1. Choose the `Help` menu
+2. Click on `About FixInsight`
+3. In the `About FixInsight` dialog enable the click `Debug Mode` checkbox.
+4. Run your FixInsight as normal.
+5. Copy the `*.filog` file in your project folder and post it as feed back to http://sourceoddity.com/
 
 ## Time to play
 
