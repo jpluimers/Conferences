@@ -1,7 +1,6 @@
 # DAPUG 2015 fall Workshop
 
-> Quality - It's all about the quality
-> Jeroen Pluimers
+> Quality - It's all about the quality - Jeroen Pluimers
 
 [Nyborg, Denmark, 20151020-20151021](http://www.dapug.dk/2015/08/workshop-20.html)
 
@@ -102,7 +101,7 @@ There is WiFi in the hotel, but quality varies.
 
 ### Morning
 
-#### 9:00 – FixInsight: static code analysis catching so much more than the compiler does.
+#### 9:00 – [FixInsight](20151021-FixInsight): static code analysis catching so much more than the compiler does.
 
 - FixInsight is a static code analysis tool which catches code issues the compiler doesn't.
 - Using it you will be amazed how much the compiler forgets to notice and how many issues your code has.
@@ -111,7 +110,7 @@ There is WiFi in the hotel, but quality varies.
 
 #### 10:30 - COFFEE BREAK
 
-#### 10:45 – TestInsight: the IDE integration of unit testing on steroids
+#### 10:45 – [TestInsight](20151021-TestInsight): the IDE integration of unit testing on steroids
 
 - Unit testing is a great way of keeping new bugs from entering a changing code base.  
 But running them and keeping an eye on them can be tedious.
