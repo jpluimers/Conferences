@@ -69,11 +69,11 @@ It parses about any Delphi language construct you can imagine. If it doesn't, re
 1. Enable the `TESTINSIGHT` compiler directive defined in the project:
     1. In the project manager
     2. Right click your project
-    3. Choose `Enable-for-Testinsight`
+    3. Choose `Testinsight Project`
 
-![Project Manager: Enable for Testinsight](Project-Manager--Context--Enable-for-Testinsight.png)
+[![Project Manager: Testinsight Project](Project-Manager--Context--Testinsight-Project--Cropped.png)](Project-Manager--Context--Testinsight-Project.png)
 
-TestInsight is smart enough to recognized if it is enabled, in which case it will show the menu entry as: ![Project Manager: Enabled for Testinsight](Project-Manager--Context--Enabled-for-Testinsight.png)
+TestInsight is smart enough to recognized if `TESTINSIGHT` is deinfed in a project, in which case it will show the menu entry as: [![Project Manager: Testinsight Project checked](Project-Manager--Context--Testinsight-Project--Checked--Cropped.png)](Project-Manager--Context--Testinsight-Project--Checked.png)
 
 2. Use the correct TestInsight framework wrapper in your project.
    The example below use `TestInsight.DUnit`, but TestInsight also supports `TestInsight.DUnit2` and `TestInsight.DUnitX`
@@ -82,8 +82,7 @@ TestInsight is smart enough to recognized if it is enabled, in which case it wil
 
 Example:
 
-```
-#!delphi
+```#!delphi
 
 program CalculatorConsoleProjectDSharpUnitTests;
 
