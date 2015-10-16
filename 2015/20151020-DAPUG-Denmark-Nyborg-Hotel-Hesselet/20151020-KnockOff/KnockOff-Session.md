@@ -121,6 +121,8 @@ Do you have a headache already? Don't worry: just trust this code works and be a
 
 ## from UI to ViewModel
 
+### Bindings what and how
+
 The `Bindings` handle the traffic from/to the UI to/from the ViewModel.
 
 Bindings use a non-generic `TDependentObservable` and can capture one or more events of the `TComponent` that they bind. This is OK, as the whole point is that you should not have your own event handling in the UI.
@@ -129,12 +131,140 @@ They can user the `TDependentObservable` as they know which types will be mapped
 
 The underlying mechanism of `TDependentObservable` and `TDependentObservable<T>` are the same, which means the binding between the UI and the ViewModel works in the same way as the ViewModel binds to the Model. This sets it totally apart from the Caliburn binding.
 
-## Example
+### Specifying Bindings
 
 Note that almost all of the bindings use strings so they are not checked by the compiler.   
 This is just like `.dfm` files: that text isn't checked by the compiler either.  
 
 I'm not alone in [wishing](https://plus.google.com/wm/trollface-meme-troll-gif-pics-lol-funny/+StefanGlienke/posts/AsGHSLF4rTX) that Delphi had a feature like the [C#/VB.net `nameof`](https://msdn.microsoft.com/en-us/library/dn986596.aspx) like Delphi has [TypeInfo](http://docwiki.embarcadero.com/Libraries/en/System.TypeInfo) (formerly [TypeOf](http://docwiki.embarcadero.com/Libraries/en/System.TypeOf)).
+
+That would make bindings like thess:
+
+```#!delphi
+type
+  TMainViewForm = class(TForm)
+...
+    [Bind('Value', 'FirstName')]
+    edtFirstName: TEdit;
+    [Bind('Text', 'FullName')]
+    lblFullName: TLabel;
+...
+    [Bind('Click', 'RegisterClick')]
+    [Bind('Disabled', 'HasClickedTooManyTimes')]
+    btnRegisterClick: TButton;
+
+    [Bind('Value', 'ChosenTicket')]
+    [BindOptions('Tickets')]
+    [BindOptionsCaption('Choose...')]
+    [BindOptionsText('Name')]
+    cbTickets: TComboBox;
+...
+    procedure FormCreate(Sender: TObject);
+  end;
+...
+```
+
+become something like this:
+
+```#!delphi
+type
+  TMainViewForm = class(TForm)
+...
+    [Bind('Value', NameOf(TViewModel.FirstName))]
+    edtFirstName: TEdit;
+    [Bind('Text', 'FullName')]
+    lblFullName: TLabel;
+...
+    [Bind('Click', NameOf(TViewModel.RegisterClick))]
+    [Bind('Disabled', NameOf(TViewModel.HasClickedTooManyTimes))]
+    btnRegisterClick: TButton;
+
+    [Bind('Value', NameOf(TViewModel.ChosenTicket))]
+    [BindOptions(NameOf(TViewModel.Tickets))]
+    [BindOptionsCaption('Choose...')]
+    [BindOptionsText(NameOf(TTicket.Name))]
+    cbTickets: TComboBox;
+...
+    procedure FormCreate(Sender: TObject);
+  end;
+...
+```
+
+> Note that Knockoff uses the same binding names as in Knockout, which might be odd for Delphi developers:
+> - [`'Value'`](http://knockoutjs.com/documentation/value-binding.html) as binding for user input controls like `TText` or `TComboBox`.
+> - [`'Text'`](http://knockoutjs.com/documentation/text-binding.html) as binding for display controls like `TLabel`.
+> - [`Disabled`](http://knockoutjs.com/documentation/disable-binding.html) maps to `not Enabled`.
+> - [`Click`](http://knockoutjs.com/documentation/click-binding.html) maps to the `OnClick` event.
+> - [`Checked`](http://knockoutjs.com/documentation/checked-binding.html) is the `Checked` property.
+> - For list based controls (which have an `Items` property), `BindOptions`, `BindOptionsCaption` and `BindOptionsText` will implement the [options binding](http://knockoutjs.com/documentation/options-binding.html) from Knockout.  
+>  `BindOptions` tells where the list comes from. `BindOptionsText` tells which property from each list item to fill the list based control with.
+
+### Starting the binding process
+
+You kick off the binding by calling these methods:
+
+```!#delphi
+procedure ApplyBindings(const view: TComponent; const viewModel: TObject);
+procedure ApplyBindingsByConventions(const view: TComponent; const viewModel: TObject);
+```
+
+You call them from your `OnCreate` event in your `View`:
+
+```!#delphi
+procedure TMainViewForm.FormCreate(Sender: TObject);
+begin
+  ApplyBindings(Self, TViewModel.Create('John', 'Doe'));
+end;
+```
+
+The first will bind using `BindingAttribute` instances.  
+The second will bind by conention: currently hardcoded to `TEdit` or `TLabel` components where the name matches a property in the `viewModel`.
+
+Both will make the `View` owner of the `ViewModel` when the `ViewModel` descends from `TComponent` and the `ViewModel` has no owner yet.
+
+
+
+
+## Example
+
+### Step 00 - empty app like Caliburn
+
+### Step 01 - add ViewModel and AppViewModelTestCase
+
+### Step 02 - bind View to ViewModel
+
+VCL app needs $(Knockoff) in the search path.
+
+### Step 03 - skipped - Knockout doesn't use interfaces for the ViewModel
+
+### Step 04 - partially skipped - form captions are not supported yet
+
+### Step 05 - add Count property and Control
+
+### Step 06 - bind Count Control to Count property
+
+Either by convention or explicitly.
+
+[Knocukout can do convention over configuration](https://mattduffield.wordpress.com/2012/09/30/knockoutjs-and-convention-over-configuration/) using for instance [Knockout.BindingConventions](https://github.com/AndersMalmgren/Knockout.BindingConventions). Knockoff has a few harcoded ones.
+
+### Step 07 - add buttons for increment/decrement Count
+
+Manual binding needed: convention is not yet supported.
+
+### Step 08 - limiting the range of Countbetween -10 and +10
+
+Some unit tests fail now, but that's ok: we will fix them in the next step.
+
+### Step 09 - ensuring the unit test results make sense
+
+### Step 11 -
+### Step 12 -
+### Step 13 -
+### Step 14 -
+### Step 15 -
+### Step 16 -
+### Step 17 -
+### Step 18 -
 
 --------------------------------------------------------------------------------------
 
