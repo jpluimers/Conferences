@@ -54,7 +54,7 @@ There is WiFi in the hotel, but quality varies.
 
 #### 09:30 - Welcome to Jeroen
 
-#### 09:40 - Demonstration and working with MVVM, Spring4D, Knockoff fundamentals and Delphi Generics.
+#### 09:40 - Demonstration and working with [MVVM](20151020-Caliburn), Spring4D, [Knockoff](20151020-KnockOff) fundamentals and Delphi Generics.
 
 - Get familiar with the nice things that have been introduced in the Pascal language over the last decade, and how some open source libraries use that to make your programming a lot easier.
 - Most of these are based on Generics, Interfaces, Loose Coupling, Inversion of Control and Dependency Injection.
@@ -70,7 +70,7 @@ There is WiFi in the hotel, but quality varies.
 
 ### Afternoon
 
-#### 13:00 - Continuous Integration using ContinuaCI & local command-line building techniques
+#### 13:00 - Continuous Integration using [Continua CI](20151020-Continua-CI) & local command-line building techniques
 
 - Especially for small teams it pays off automating as much of the dull work as possible.
 - A dull part of the process often is compiling and building your program into something testable or shippable.
