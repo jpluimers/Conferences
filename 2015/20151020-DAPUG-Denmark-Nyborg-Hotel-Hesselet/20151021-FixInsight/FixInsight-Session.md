@@ -39,7 +39,7 @@ http://sourceoddity.com/download/FixInsight_2015.10upd1_setup.exe (it got update
         5. Confirm the dialog that asks you to restart Delphi.
         6. Restart Delphi.
 
-- [Docs](http://sourceoddity.com/fixinsight/doc.html): we will see most of them in the session.
+- [Docs](http://sourceoddity.com/fixinsight/doc.html): we will see most of them in the session[.](http://sourceoddity.com/video/CodeRageX-FixInsight.mp4)
 
 The license until early November so you can play with it after the workshop.  
 If you like it, use the coupon (ask Jens) to get a 20% discount when you [buy](http://sourceoddity.com/fixinsight/order.html) it.
