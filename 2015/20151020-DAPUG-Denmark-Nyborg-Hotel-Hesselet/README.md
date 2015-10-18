@@ -70,7 +70,7 @@ There is WiFi in the hotel, but quality varies.
 
 ### Afternoon
 
-#### 13:00 - Continuous Integration using [Continua CI](20151020-Continua-CI) & local command-line building techniques
+#### 13:00 - [Continuous Integration using Continua CI & local command-line building techniques](20151020-Build-process-automation/Build-process-automation-Session.md)
 
 - Especially for small teams it pays off automating as much of the dull work as possible.
 - A dull part of the process often is compiling and building your program into something testable or shippable.
@@ -81,7 +81,7 @@ There is WiFi in the hotel, but quality varies.
 
 #### 14:45 - COFFEE BREAK
 
-#### 15:00 - Data aware controls VCL - data aware control controller
+#### 15:00 - [Data aware controls VCL](20151020-DataAwareControls) - data aware control controller
 
 - We go back to old-school but very important VCL: most applications use VCL and databases.
 
