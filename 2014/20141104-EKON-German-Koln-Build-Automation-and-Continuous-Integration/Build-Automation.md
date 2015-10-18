@@ -168,9 +168,9 @@ Where MSBuild uses `$(Configuration)`, Delphi also uses `$(Config)` and does not
 
 These are all relative the `$(BDS)` path of the targeted Delphi version:
 
-- $(BDS)\lib\... - often $(BDSLIB)\$(PLATFORM)\$(CONFIG)
-- $(BDSINCLUDE) - $(BDS)\include
-- $(BDSCOMMONDIR) - relative to $(PUBLIC) with product specific suffix
+- `$(BDS)\lib\...` - often `$(BDSLIB)\$(PLATFORM)\$(CONFIG)`
+- `$(BDSINCLUDE)` - `$(BDS)\include`
+- `$(BDSCOMMONDIR)` - relative to `$(PUBLIC)` with product specific suffix
 
 These will get you
 
@@ -178,7 +178,11 @@ These will get you
 - .inc files
 - .dcp and/or .bpl files
 
-The `$(BDSCOMMONDIR)` is a global reference, so you need to be careful with it. 
+The `$(BDSCOMMONDIR)` is a global reference, so you need to be careful with it.
+
+Note:
+
+- Delphi 2007 does not recognize `$(PLATFORM)`, so use hardcoded `Win32` for that  
 
 ### `rsvars.bat`
 
