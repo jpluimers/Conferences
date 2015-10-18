@@ -83,7 +83,6 @@ TestInsight is smart enough to recognized if `TESTINSIGHT` is deinfed in a proje
 Example:
 
 ```#!delphi
-
 program CalculatorConsoleProjectDSharpUnitTests;
 
 {$IFDEF CONSOLE_TESTRUNNER} // without it, the GUI testrunner will be used
