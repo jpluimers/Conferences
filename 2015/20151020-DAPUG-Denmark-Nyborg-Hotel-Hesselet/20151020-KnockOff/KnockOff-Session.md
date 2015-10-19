@@ -1,6 +1,6 @@
 # [KnockOff](https://bitbucket.org/sglienke/knockoff): to show how MVVM in Delphi can work.
 
-[Nyborg, Denmark, 20151021](http://www.dapug.dk/2015/08/workshop-20.html)
+[Nyborg, Denmark, 20151020](http://www.dapug.dk/2015/08/workshop-20.html)
 
 - Examples: <https://bitbucket.org/jeroenp/besharp.net>
 - Slides: <http://github.com/jpluimers/Conferences>
@@ -227,6 +227,8 @@ Both will make the `View` owner of the `ViewModel` when the `ViewModel` descends
 
 ## Example
 
+Note that KnockOff is an experimental proof of concept. Not all notifications arrive on time, so some min/max checks give different results than in Calinurn. Same for the exceptions raised.
+
 ### Step 00 - empty app like Caliburn
 
 ### Step 01 - add ViewModel and AppViewModelTestCase
@@ -255,19 +257,37 @@ Manual binding needed: convention is not yet supported.
 
 Some unit tests fail now, but that's ok: we will fix them in the next step.
 
+Note that throwing Exceptions should be avoided in the ViewModel of MVVM (they are more OK in the Model), but lets try to make things not too overly complicated right now.
+
 ### Step 09 - ensuring the unit test results make sense
 
-### Step 11 -
-### Step 12 -
-### Step 13 -
-### Step 14 -
-### Step 15 -
-### Step 16 -
-### Step 17 -
-### Step 18 -
+### Step 10 - modified - no support for Actions in Knockoff yet
 
---------------------------------------------------------------------------------------
+### Step 11 - skipped - no logging in Knockoff yet
 
-TODO
+### Step 12 - unit tests for *2 and +2 and manual bindings from View to ViewModel
 
---------------------------------------------------------------------------------------
+Note that manual bindings will not work for `TCombBox` (`Options` binding) as that attribute has a lot of internal logic in method `procedure BindOptionsAttribute.ApplyBinding(...)`
+
+For Manual Bindings, you also have to ensure you free the ViewModel, easiest is by owning it:
+
+    InsertComponent(LAppViewModel);
+
+### Step 13 - modified - increment by a specified value
+
+Here we have to make a `TTrackBarBinding` and modify `GetBindingClass` so `Bind` can create the correct binding class instance.
+
+### Step 14 - adding a model
+
+This looks different than in Caliburn as the model now also uses Observers.
+
+## Reporting issues
+
+Like any software, Knockoff can have issues especially since it's a proof-of-concept prototype.
+
+There is no issue tracker yet, so contact me if you bump into things
+
+## Time to play
+
+1. Make a small calculator that can multiply/divide.
+2. Show a nice message when divide is not possible.
