@@ -43,7 +43,7 @@ It makes it a lot easier if you have this installed on your machines:
 - [Mercurial for Windows]() as the Examples repository is using Mercurial.
 - [SourceTree for Windows](https://www.sourcetreeapp.com/) which makes it easier to visually work with Mercurial and Git repositories
 - A good text editor (I like [Notepad++](https://notepad-plus-plus.org/) a lot)
-- Delphi productivity tools like [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), etc.
+- (Delphi) productivity tools like [Beyond Compare](http://www.scootersoftware.com), [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), etc.
 
 ### Power
 
@@ -152,11 +152,5 @@ and cooperate.
 
 During the sessions I will try to demonstrate the tools I use on a regular base like version control
 (I prefer DVCS like Git and Mercurial even for my one-man projects), AQTime performance profiling, Beyond Compare, ModelMaker Code Explorer and many many others.
-
-I'm a keyboard person, so you will also learn lots and lots of shortcuts and of course about console commands.
-
-During the sessions I will try to demonstrate the tools I use on a regular base like version control
-(I prefer DVCS like Git and Mercurial even for my one-man projects), AQTime performance profiling,
-Beyond Compare, ModelMaker Code Explorer and many many others.
 
 I'm a keyboard person, so you will also learn lots and lots of shortcuts and of course about console commands.
