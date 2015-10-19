@@ -4,11 +4,11 @@
 
 [Nyborg, Denmark, 20151020-20151021](http://www.dapug.dk/2015/08/workshop-20.html)
 
-[Hotel Hesselet](http://www.hotel-hesselet.dk/)
-Christianslundsvej 119
-5800 Nyborg
-Denmark
-+45 65 31 30 29
+[Hotel Hesselet](http://www.hotel-hesselet.dk/)  
+Christianslundsvej 119  
+5800 Nyborg  
+Denmark  
++45 65 31 30 29  
 
 ## After the Workshop
 
@@ -31,6 +31,19 @@ Denmark
 ## Setup, Power, Network
 
 Be early to setup at around 08:00. The workshop begins at about 09:30.
+
+Bring a good mood, we're going to have fun!
+
+### Setup
+
+It makes it a lot easier if you have this installed on your machines:
+
+- A Delphi version that is XE or higher
+- [Git for Windows](https://github.com/git-for-windows/git/releases/latest) as the [Conferences repository](https://github.com/jpluimers/Conferences) is using Git.
+- [Mercurial for Windows]() as the Examples repository is using Mercurial.
+- [SourceTree for Windows](https://www.sourcetreeapp.com/) which makes it easier to visually work with Mercurial and Git repositories
+- A good text editor (I like [Notepad++](https://notepad-plus-plus.org/) a lot)
+- Delphi productivity tools like [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), etc.
 
 ### Power
 
@@ -89,7 +102,7 @@ There is WiFi in the hotel, but quality varies.
 - Two important parts are a data-aware control controller, and a dataset helper.
 - As a side effect you will see how the data aware controls and data source are internally bound using data-links and learn about modularisation of your code.
 
-#### 17:00 - Wrap up of Tuesday, with a message from Flemming Jensen, Nohau.
+#### 17:00 - Wrap up of Tuesday, with a message from [Flemming Jensen](https://www.linkedin.com/in/flemmingkoldingjensen), [Nohau](http://dk.nohau.se/).
 
 ### Evening - chance to look at the books Jeroen brought
 
