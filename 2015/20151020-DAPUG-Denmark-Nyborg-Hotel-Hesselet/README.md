@@ -45,6 +45,43 @@ It makes it a lot easier if you have this installed on your machines:
 - A good text editor (I like [Notepad++](https://notepad-plus-plus.org/) a lot)
 - (Delphi) productivity tools like [Beyond Compare](http://www.scootersoftware.com), [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), etc.
 
+#### Repositories used
+
+- Spring4D:
+    - Home: https://bitbucket.org/sglienke/spring4d
+    - Git: https://bitbucket.org/sglienke/spring4d.git
+    - Console: `git clone https://bitbucket.org/sglienke/spring4d.git`
+- DSharp
+    - Home: https://bitbucket.org/sglienke/dsharp
+    - Git: https://bitbucket.org/sglienke/dsharp.git
+    - Console: `git clone https://bitbucket.org/sglienke/dsharp.git`
+- Knockoff
+    - Home: https://bitbucket.org/sglienke/knockoff
+    - Git: https://bitbucket.org/sglienke/knockoff.git
+    - Console: `git clone https://bitbucket.org/sglienke/knockoff.git`
+- BeSharp
+    - Home: https://bitbucket.org/jeroenp/besharp.net
+    - Mercurial/Hg: https://bitbucket.org/jeroenp/besharp.net
+    - Console: `hg clone https://bitbucket.org/jeroenp/besharp.net`
+
+Easiest way to get them:
+
+    pushd %USERPROFILE%
+    mkdir Versioned
+    cd Versioned
+    git clone https://bitbucket.org/sglienke/spring4d.git
+    git clone https://bitbucket.org/sglienke/dsharp.git
+    git clone https://bitbucket.org/sglienke/knockoff.git
+    hg clone https://bitbucket.org/jeroenp/besharp.net`
+    popd
+
+#### Tools used
+
+- ZoomIt: https://technet.microsoft.com/en-us/sysinternals/bb897434.aspx
+- ProcMon: https://technet.microsoft.com/en-us/sysinternals/bb896645
+- Everything: http://www.voidtools.com/
+- Beyond Compare: http://www.scootersoftware.com/features.php
+
 ### Power
 
 The meeting room has power. If you need to plug in more than one device, bring an extension cord or power strip that fits multiple plugs.
