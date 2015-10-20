@@ -66,7 +66,7 @@ It makes it a lot easier if you have this installed on your machines:
 
 Easiest way to get them:
 
-    pushd %USERPROFILE%
+    pushd "%USERPROFILE%"
     mkdir Versioned
     cd Versioned
     git clone https://bitbucket.org/sglienke/spring4d.git
