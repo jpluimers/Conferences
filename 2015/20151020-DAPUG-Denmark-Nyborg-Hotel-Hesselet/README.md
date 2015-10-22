@@ -172,7 +172,7 @@ But running them and keeping an eye on them can be tedious.
 
 ### Afternoon
 
-#### 13:00 – Highlights of Software Quality
+#### 13:00 – [Highlights of Software Quality](20151021-Software-Quality-the-Human-Factor)
 
 - Code Complete
 - Refactoring: improving the design of existing code
