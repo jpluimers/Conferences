@@ -1,4 +1,9 @@
-# [Continua CI: continuous integration of your builds, packaging, testing and deployment](https://github.com/jpluimers/Conferences/blob/master/2014/20141104-EKON-German-Koln-Build-Automation-and-Continuous-Integration/Continua-CI.md)
+# [Continua CI](https://continuaci.pluimers.com): continuous integration of your builds, packaging, testing and deployment
+
+[Nyborg, Denmark, 20151020](http://www.dapug.dk/2015/08/workshop-20.html)
+
+- Slides: <http://github.com/jpluimers/Conferences>
+- Blog: <http://wiert.me>
 
 ## Introduction
 

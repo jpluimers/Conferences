@@ -6,7 +6,7 @@
 - Slides: <http://github.com/jpluimers/Conferences>
 - Blog: <http://wiert.me>
 
-During presentation I've used the [full powerpoint slides](An-introduction-to-MVVM-in-Delphi.pptx).
+During presentation I've used the [full powerpoint slides](01-Intro-MVVM-DSharp-Caliburn/An-introduction-to-MVVM-in-Delphi.pptx).
 
 For reading however, it is much easier to go through the Markdown files:
 

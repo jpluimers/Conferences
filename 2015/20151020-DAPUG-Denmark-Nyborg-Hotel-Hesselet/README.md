@@ -43,7 +43,15 @@ It makes it a lot easier if you have this installed on your machines:
 - [Mercurial for Windows]() as the Examples repository is using Mercurial.
 - [SourceTree for Windows](https://www.sourcetreeapp.com/) which makes it easier to visually work with Mercurial and Git repositories
 - A good text editor (I like [Notepad++](https://notepad-plus-plus.org/) a lot)
-- (Delphi) productivity tools like [Beyond Compare](http://www.scootersoftware.com), [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), etc.
+- (Delphi) productivity tools like [Beyond Compare](http://www.scootersoftware.com), [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), [FixInsight](http://sourceoddity.com/fixinsight/), [TestInsight](https://bitbucket.org/sglienke/testinsight/wiki/Home) etc.
+
+#### Discounts
+
+Attendees can get a 20% discount for the next procucts; ask Jens or me for the coupon.
+
+- [Beyond Compare](http://www.scootersoftware.com); regular prices: single platform standard/pro: [USD 30/50](http://www.scootersoftware.com/features.php?zz=pricing); multi-platform standard/pro [USD 48/80](http://www.scootersoftware.com/features.php?zz=pricing).
+- [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html); regular price [EUR 99/199/399/749](http://www.modelmakertools.com/order/newlicenses.html) for 1-user/4-user/10-user/site license.
+- [FixInsight](http://sourceoddity.com/fixinsight/); regular price [USD 127](http://sourceoddity.com/fixinsight/order.html).
 
 #### Repositories used
 
