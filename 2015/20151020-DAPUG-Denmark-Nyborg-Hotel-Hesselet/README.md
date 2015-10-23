@@ -40,7 +40,7 @@ It makes it a lot easier if you have this installed on your machines:
 
 - A Delphi version that is XE or higher
 - [Git for Windows](https://github.com/git-for-windows/git/releases/latest) as the [Conferences repository](https://github.com/jpluimers/Conferences) is using Git.
-- [Mercurial for Windows]() as the Examples repository is using Mercurial.
+- [Mercurial for Windows](https://www.mercurial-scm.org/wiki/Download) as the Examples repository is using Mercurial.
 - [SourceTree for Windows](https://www.sourcetreeapp.com/) which makes it easier to visually work with Mercurial and Git repositories
 - A good text editor (I like [Notepad++](https://notepad-plus-plus.org/) a lot)
 - (Delphi) productivity tools like [Beyond Compare](http://www.scootersoftware.com), [GExperts](http://www.gexperts.org/), [ModelMaker Code Explorer](http://www.modelmakertools.com/code-explorer/index.html), [FixInsight](http://sourceoddity.com/fixinsight/), [TestInsight](https://bitbucket.org/sglienke/testinsight/wiki/Home) etc.
