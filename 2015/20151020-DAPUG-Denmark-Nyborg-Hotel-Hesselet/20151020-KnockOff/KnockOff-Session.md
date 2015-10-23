@@ -239,6 +239,8 @@ VCL app needs $(Knockoff) in the search path.
 
 ### Step 03 - skipped - Knockout doesn't use interfaces for the ViewModel
 
+This is because JavaScript doesn't support interfaces; [JavaScript has Duck typing instead](http://stackoverflow.com/questions/3710275/does-javascript-have-the-interface-type-such-as-javas-interface).
+
 ### Step 04 - partially skipped - form captions are not supported yet
 
 ### Step 05 - add Count property and Control

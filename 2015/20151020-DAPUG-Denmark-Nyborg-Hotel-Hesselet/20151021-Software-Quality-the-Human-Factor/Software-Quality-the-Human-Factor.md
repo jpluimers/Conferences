@@ -1,6 +1,6 @@
 # Highlights of Software Quality: the human factor
 
-[Nyborg, Denmark, 20151020](http://www.dapug.dk/2015/08/workshop-20.html)
+[Nyborg, Denmark, 20151021](http://www.dapug.dk/2015/08/workshop-20.html)
 
 - Slides: <http://github.com/jpluimers/Conferences>
 - Blog: <http://wiert.me>
