@@ -1,14 +1,14 @@
-# DAPUG 2015 fall Workshop
+# 19. EKON 2015
 
-> Quality - It's all about the quality - Jeroen Pluimers
+> The conference for Delphi & More
 
-[Nyborg, Denmark, 20151020-20151021](http://www.dapug.dk/2015/08/workshop-20.html)
+[Köln, Germany, 20151102-20151104](http://web.archive.org/web/20150912121134/http://entwickler-konferenz.de/2015/de)
 
-[Hotel Hesselet](http://www.hotel-hesselet.dk/)  
-Christianslundsvej 119  
-5800 Nyborg  
-Denmark  
-+45 65 31 30 29  
+[Hilton Hotel, Köln](https://www.google.com/search?q=hilton+cologne)  
+Marzellenstraße 13-17
+50668 Köln
+Germany
++49 221 130710
 
 ## Chance to look at the books Jeroen brought
 
@@ -22,21 +22,11 @@ Feel free to browse through them during the day. Be sure to return them before t
 - Slides: <http://github.com/jpluimers/Conferences>
 - Blog: <http://wiert.me>
 
-## Travel
-
-- By train: It takes 1 hour 30 minutes from Copenhagen by train, and from Århus about 2 hours and 15 minutes.
-- By car:
-    1. Take exit 45 on the E20 highway, exit sign "Nyborg Øst" (Nyborg East).
-    2. Head north and follow the signs: Strandhoteller (Beach hotels).
-    3. Turn left onto Storebæltsvej/Route 163.
-    4. Take Østerøvej to Christianslundsvej.
-    5. Storebæltsvej turns slightly left and becomes Østerøvej
-    6. Østerøvej turns left and becomes Christianslundsvej
-    7. At Christianslundsvej, turn right (sign: Hotel Hesselet).
-
 ## Setup, Power, Network
 
 Be early to setup at around 08:00. The workshop begins at about 09:30.
+
+Network access code: `softwareandsupport` valid for 24 hours each time you connect with it.
 
 Bring a good mood, we're going to have fun!
 
