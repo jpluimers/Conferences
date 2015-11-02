@@ -22,7 +22,7 @@ http://sourceoddity.com/download/FixInsight_2015.10upd1_setup.exe (it got update
     2. Run the installer
     3. Register the license
 
-- License: lasts until 20151102. Get it from [Elena Hüls](https://www.xing.com/profile/Elena_Huels) or me, then use either of these steps to apply the license:
+- License: lasts until 20151111 (and has full product features). Get it from [Elena Hüls](https://www.xing.com/profile/Elena_Huels) or me, then use either of these steps to apply the license:
     1. Via the `FixInsight License Manager`:
         1. Click on the Windows `Start` button
         2. Click `Programs` -> `FixInsight -> `FixInsight License Manager`.
@@ -41,7 +41,7 @@ http://sourceoddity.com/download/FixInsight_2015.10upd1_setup.exe (it got update
 
 - [Docs](http://sourceoddity.com/fixinsight/doc.html): we will see most of them in the session[.](http://sourceoddity.com/video/CodeRageX-FixInsight.mp4)
 
-The license until early November so you can play with it after the workshop.  
+The license until halfway November so you can play with it after the conference.  
 If you like it, use the coupon (ask [Elena Hüls](https://www.xing.com/profile/Elena_Huels) or me) to get a 20% discount when you [buy](http://sourceoddity.com/fixinsight/order.html) it.
 
 ## Why
