@@ -16,7 +16,7 @@ During presentation I've used the [full powerpoint slides](01-Intro-MVVM-DSharp-
 
 For reading however, it is much easier to go through the Markdown files:
 
-- [MVVM in Delphi using the Caliburn Micro for Delphi framework)[01-Intro-MVVM-DSharp-Caliburn/MVVM-in-Delphi-using-the-Caliburn-Micro-for-Delphi-framework.md]
+- [MVVM in Delphi using the Caliburn Micro for Delphi framework](01-Intro-MVVM-DSharp-Caliburn/MVVM-in-Delphi-using-the-Caliburn-Micro-for-Delphi-framework.md)
 - [Steps in `MindScape_AppView_StepByStep.groupproj`](02-DSharp-MindScape-AppView-StepByStep/DSharp_MindScape_AppView_StepByStep.groupproj)
 
 The [Knockoff materials](KnockOff-Session) are not yet in article format, but does show the steps how to write the same simple VCL application.
