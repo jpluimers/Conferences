@@ -92,7 +92,7 @@ The meeting rooms have power. If you need to plug in more than one device, bring
 
 ### Network
 
-There is WiFi in the hotel, but quality varies. In the meeting rooms, it's free.
+There is WiFi in the hotel, but quality varies. In the meeting rooms, it's free. Access code is `softwareandsupport`.
 
 # [Program (Zeitplaner)](http://web.archive.org/web/20151101153224/http://entwickler-konferenz.de/2015/de/zeitplaner) as  [PDF](http://web.archive.org/web/20151101153333/http://entwickler-konferenz.de/2015/sites/default/files/ekon_zeitplaner_pdf.pdf).
 
