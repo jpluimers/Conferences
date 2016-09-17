@@ -6,7 +6,7 @@ Network protocol security
 Im memoriam: Gwan Tan
 *********************
 
-`Im memoriam: Gwan Tan, friend, Delphi, Firebird, EKON and Delphi-Tage supporter <https://forum.delphi-treff.de/index.php/Thread/60398-Im-memoriam-Gwan-Tan-friend-Delphi-Firebird-EKON-and-Delphi-Tage-supporter/>`_
+`Im memoriam: Gwan Tan, friend, Delphi, Firebird, EKON and Delphi-Tage supporter <http://www.delphipraxis.net/189691-im-memoriam-gwan-tan-friend-delphi-firebird-ekon-delphi-tage-supporter.html>`_
 
 .. image:: Portrait-Gwan-Tan.jpeg
 
@@ -65,9 +65,12 @@ SSL (now TLS) and SSH are totally different protocols.
 
 Both use hashing and cypher algorithms. Do not use these weak hashing algorithms/settings:
 
-- `RC4 <https://en.wikipedia.org/wiki/RC4>`_
-- `MD5 <https://en.wikipedia.org/wiki/MD5>`_
-- `SHA1 <https://en.wikipedia.org/wiki/SHA-1>`_
+- `MD5 <https://en.wikipedia.org/wiki/MD5>`_ - 1996 flaw in design found; 2012 Flame malware exploited MD5
+- `SHA1 <https://en.wikipedia.org/wiki/SHA-1>`_ - 2015 estimate of cracking single key is 75K–120K US$
+- `DES <https://en.wikipedia.org/wiki/Data_Encryption_Standard>`_ - keysize 56 bit
+- `RC4 <https://en.wikipedia.org/wiki/RC4>`_ - 2013 statistical biases in RC4 key table
+- `3DES <https://en.wikipedia.org/wiki/3DES>`_ - because of `SWEET32 collission attack <https://threatpost.com/new-collision-attacks-against-3des-blowfish-allow-for-cookie-decryption/120087/>`_
+- `Blowfish <https://en.wikipedia.org/wiki/Blowfish_(cipher)>`_ - because of `SWEET32 collission attack <https://threatpost.com/new-collision-attacks-against-3des-blowfish-allow-for-cookie-decryption/120087/>`_
 - anything with 1024 or less bits in key or hash
 - pre-installed default/stock keys that come with your OS
 
@@ -450,7 +453,7 @@ There is a http://synapse.ararat.cz/files/contrib/sftp.zip from 2006 but that pu
 
 Then I found https://bitbucket.org/ZeljkoMarjanovic/libssh2-delphi which had `commits from mid-2010 to early 2013 <https://bitbucket.org/ZeljkoMarjanovic/libssh2-delphi/commits/all>`_
 
-It's a Delphi wrapper around the OK C library `ssh2`. Later I will review ``libssh`` versus ``libssh2``; for now it works quite well and ``libssh2`` gets frequent updates.
+It's a Delphi wrapper around the OK C library ``libssh2``. Later I will review ``libssh`` versus ``libssh2``; for now it works quite well and ``libssh2`` gets frequent updates.
 
 I also considered thinking outside the Delphi realm by embedding either of these:
 
@@ -571,7 +574,7 @@ It three parts:
     - nice as it shows all features
     - touch as most code is in the form
 
-So I wrote a smaller SFTP upload example so it is easier to focus on some basics: https://bitbucket.org/jeroenp/besharp.net/commits/c2eeb3c50ba051b90e2737a893509f8f6186b204
+So I wrote a smaller SFTP upload example so it is easier to focus on some basics in the https://bitbucket.org/jeroenp/besharp.net repository at `feature/Build SFTP example for DelphiTage/EKON. <https://bitbucket.org/jeroenp/besharp.net/branch/feature/Build%20SFTP%20example%20for%20DelphiTage/EKON.>`_
 
 Let's dig into that and the GUI now...
 
@@ -629,29 +632,16 @@ Some semi-random Delphi SSL related posts
 During the search above I found the below links that will be useful to
 me one day:
 
--  `Send mail to GMail using Indy and SSL/TLS
-   SMTP <http://www.marcocantu.com/tips/oct06_gmail.html>`__
--  `FTPS <https://en.wikipedia.org/wiki/FTPS>`__ (FTP over
-   TLS/SSL): \ `[Delphi] - INDY + IDFTP + SSL/TLS ::
-   4programmers.net <http://forum.4programmers.net/Delphi_Pascal/141070-Delphi_-_INDY_+_IDFTP_+_SSLTLS>`__
--  `Delphi Indy Samples & Articles -
-   Delphi <http://www.ciuly.com/index.php/delphi/indy>`__
+-  `Send mail to GMail using Indy and SSL/TLS SMTP <http://www.marcocantu.com/tips/oct06_gmail.html>`__
+-  `FTPS <https://en.wikipedia.org/wiki/FTPS>`__ (FTP over TLS/SSL): \ `[Delphi] - INDY + IDFTP + SSL/TLS :: 4programmers.net <http://forum.4programmers.net/Delphi_Pascal/141070-Delphi_-_INDY_+_IDFTP_+_SSLTLS>`__
+-  `Delphi Indy Samples & Articles - Delphi <http://www.ciuly.com/index.php/delphi/indy>`__
 
-   -  `Indy SSL Yahoo send email example
-      (2) <http://www.ciuly.com/delphi/indy/indy-ssl-yahoo-send-email-example-2/>`__
-   -  `Login into googles blogger using
-      SSL <http://www.ciuly.com/delphi/indy/login-into-googles-blogger-using-ssl/>`__
-   -  `Persistent login example using SSL and sending email for
-      Yahoo <http://www.ciuly.com/delphi/indy/persistent-login-example-using-ssl-and-sending-email-for-yahoo/>`__
-   -  `Persistent login example using SSL for
-      EBAY <http://www.ciuly.com/delphi/indy/persistent-login-example-using-ssl-for-ebay/>`__
-   -  `Indy SSL persistent login for
-      uniqueauction.com <http://www.ciuly.com/delphi/indy/indy-ssl-persistent-login-for-uniqueauction-com/>`__
+   -  `Indy SSL Yahoo send email example (2) <http://www.ciuly.com/delphi/indy/indy-ssl-yahoo-send-email-example-2/>`__
+   -  `Login into googles blogger using SSL <http://www.ciuly.com/delphi/indy/login-into-googles-blogger-using-ssl/>`__
+   -  `Persistent login example using SSL and sending email for Yahoo <http://www.ciuly.com/delphi/indy/persistent-login-example-using-ssl-and-sending-email-for-yahoo/>`__
+   -  `Persistent login example using SSL for EBAY <http://www.ciuly.com/delphi/indy/persistent-login-example-using-ssl-for-ebay/>`__
+   -  `Indy SSL persistent login for uniqueauction.com <http://www.ciuly.com/delphi/indy/indy-ssl-persistent-login-for-uniqueauction-com/>`__
 
 -  `Indy SSL <http://www.indyproject.org/Sockets/SSL.en.aspx>`__
--  `libssh2 <https://libssh2.org/>`__ Delphi
-   wrapper: \ `ZeljkoMarjanovic / libssh2 delphi —
-   Bitbucket <https://bitbucket.org/ZeljkoMarjanovic/libssh2-delphi>`__ (unmaintained
-   since 2013-01-02)
--  WinSCP wrapper in the wayback machine: `SeySo Software & Service -
-   Projects <http://web.archive.org/web/20160329165723/http://seyso.de/projects_e/projects_en.php>`__
+-  `libssh2 <https://libssh2.org/>`__ Delphi wrapper: \ `ZeljkoMarjanovic / libssh2 delphi — Bitbucket <https://bitbucket.org/ZeljkoMarjanovic/libssh2-delphi>`__ (unmaintained since 2013-01-02)
+-  WinSCP wrapper in the wayback machine: `SeySo Software & Service - Projects <http://web.archive.org/web/20160329165723/http://seyso.de/projects_e/projects_en.php>`__
