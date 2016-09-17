@@ -1,0 +1,67 @@
+@startuml
+
+' left to right direction
+
+namespace ESXi {
+  object Revue <<VM>> {
+    80 = http
+    443 = https
+    4200 = ShellinaBox
+    Apache mod_alias = alias_module
+    Apache mod_proxy = proxy_module
+    Apache mod_proxy_http = proxy_http_module
+    Apache mod_proxy_connect = = proxy_connect_module
+    Apache mod_ssl
+    continua.pluimers.com:443/ = http://192.168.71.46:8080/
+    *.pluimers.com:443/shell = http://localhost:4200/
+    *.pluimers.com:443/shell/revue = http://localhost:4200/
+    *.pluimers.com:443/shell/snap = http://192.168.71.80:4200/
+    pcm.pluimers.com =:443 = to be done (proxy connect module)
+  }
+  object Slave1 <<VM>> {
+    Secondary DNS
+    4200 = ShellinaBox
+  }
+  object Slave2 <<VM>> {
+    Secondary DNS
+    4200 = ShellinaBox
+  }
+  object Snip <<VM>> {
+    Playground
+    80 = http
+    4200 = ShellinaBox
+  }
+  object Snap <<VM>> {
+    Primary MX
+    80 = http
+    4200 = shellinabox
+  }
+  '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' Windows VMs
+  object W81EntX64CI <<VM>> {
+    80 = DefaultHttp
+    8080 = ContinuaCI-web
+    9000 = Continua.Server.Service.exe
+    9002 = Continua.Agent.Service.exe
+    9010 = Continua.SSHD.exe
+  }
+  object vSwitch7 <<vSwitch>> {
+    Fiber internal
+  }
+}
+
+Snap .. vSwitch7 : eth0
+Snip .. vSwitch7 : eth0
+Revue .. vSwitch7 : eth0
+Slave1 .. vSwitch7 : eth0
+Slave2 .. vSwitch7 : eth0
+
+W81EntX64CI .. vSwitch7 : Ethernet
+
+Revue -> W81EntX64CI #blue;text:blue : ProxyPass->CI
+Revue -> Slave1 #blue;text:blue : ProxyPass->shellinabox
+Revue -> Slave2 #blue;text:blue : ProxyPass->shellinabox
+Revue -> Snap #blue;text:blue : ProxyPass->shellinabox
+Revue -> Snip #blue;text:blue : ProxyPass->shellinabox
+Revue -> Revue #blue;text:blue : ProxyPass->shellinabox
+
+@enduml
