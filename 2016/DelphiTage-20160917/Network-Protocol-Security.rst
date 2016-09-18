@@ -79,6 +79,7 @@ Most of the issues there are with server-side configurations.
 This means you have to
 
 1. harden your install when it comes out of the box. Some ideas:
+
   - Linux side:
     - `My First 10 Minutes on a Server <https://news.ycombinator.com/item?id=11909543>`_
     - `SSH Server Configuration rhel-lockdown <http://people.redhat.com/swells/mea/SECSCAN-FirstRun/sshd_config.htm>`_
@@ -87,20 +88,22 @@ This means you have to
     - `Hardening Your Web Server’s SSL Ciphers — Hynek Schlawack <https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/>`_:
     - `Mozilla.org Security, Server Side TLS: Apache <https://wiki.mozilla.org/Security/Server_Side_TLS#Apache>`_
     - `weak Diffie-Hellman <https://weakdh.org/>`_ (see `Schneier on Security, Crypto-Gram, June 15, 2015, The Logjam (and Another) Vulnerability against Diffie-Hellman Key Exchange <https://www.schneier.com/crypto-gram/archives/2015/0615.html#1>`_).
-
   - Windows side:
     - `Hardening the Windows infrastructure <https://technet.microsoft.com/en-us/library/cc995076.aspx>`_
     - `Server Hardening: Windows Server 2012 <https://technet.microsoft.com/en-us/security/jj720323.aspx>`_
     - `Baseline Server Hardening <https://technet.microsoft.com/en-us/library/cc526440.aspx>`_
 
 2. watch places like these to stay up-to-date:
+
   - OpenSuSE (which I use most)
+
     - https://openqa.opensuse.org/group_overview/1
     - https://www.suse.com/support/update/
     - https://www.suse.com/security/cve/
     - https://lwn.net/Alerts/openSUSE/
 
   - Others
+
     - https://access.redhat.com/security/security-updates/#/
     - http://www.ubuntu.com/usn/
     - https://www.freebsd.org/security/advisories.html
@@ -197,10 +200,10 @@ So we do some limited discussion here. If time permits we can dig deeper.
 We use tools on Linux for most checking. Remote login to Linux from Windows is easy with https://the.earth.li/~sgtatham/putty/0.67/ via http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 Testing TLS/SSL
-===============
+***************
 
 Testing TLS/SSL with testssl.sh
-+++++++++++++++++++++++++++++++
+===============================
 
 You can it at https://testssl.sh/ (yes that *is* secure `https <https://en.wikipedia.org/wiki/HTTPS>`_).
 
@@ -431,8 +434,7 @@ On the commercial ones:
 
 I decided against `SecureBlackBox <https://www.eldos.com/sbb>`_ (providing `SFTPBlackbox <https://www.eldos.com/sbb/desc-sftp.php>`__) and IP\*Works' (`SSH <https://www.nsoftware.com/ipworks/ssh/>`__) as:
 
--  I tried both a while ago for `S/MIME <https://en.wikipedia.org/wiki/S/MIME>`_ support and was disappointed about both the lack of features and documentation; in the end I went for wrapping
-`OpenSSL <https://en.wikipedia.org/wiki/OpenSSL>`_ for the "encrypt-then-sign" process and Indy for the SSMTP part.
+-  I tried both a while ago for `S/MIME <https://en.wikipedia.org/wiki/S/MIME>`_ support and was disappointed about both the lack of features and documentation; in the end I went for wrapping `OpenSSL <https://en.wikipedia.org/wiki/OpenSSL>`_ for the "encrypt-then-sign" process and Indy for the SSMTP part.
 - The `acquisition of SecureBlackBox by /n software <https://www.nsoftware.com/company/press/pr084.rst>`_ made me even less happy: those usually tend to stall things for a while.
 
 The `Chilkat alternative for SFTP <https://www.example-code.com/delphi/sftp.asp>`__ isn't too compelling either:
@@ -581,7 +583,7 @@ Let's dig into that and the GUI now...
 libssh2 building
 ================
 
-Since ``libssh2-delphi`` requires a Win32 (x86) ``libssh2.dll` I needed to build one.
+Since ``libssh2-delphi`` requires a Win32 (x86) ``libssh2.dll`` I needed to build one.
 
 So I asked this on the ``#libsshs`` IRC channel::
 
