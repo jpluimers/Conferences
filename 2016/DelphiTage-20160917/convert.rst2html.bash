@@ -8,5 +8,5 @@
 pandoc --standalone --toc --toc-depth=5 Network-Protocol-Security.rst -o Network-Protocol-Security.html
 
 # Mac OS X: rst2html.py required homebrew and `brew install docutils`
-rst2html.py 
+rst2html.py Network-Protocol-Security.rst Network-Protocol-Security.html
 open Network-Protocol-Security.html
