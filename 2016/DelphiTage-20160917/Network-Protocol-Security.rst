@@ -628,6 +628,18 @@ SSH testing
 
 Try https://github.com/GDSSecurity/SSH-Weak-DH which is explained at http://blog.gdssecurity.com/labs/2015/8/3/ssh-weak-diffie-hellman-group-identification-tool.html and reached via http://security.stackexchange.com/questions/92642/logjam-hardening-openssh-and-testing-it
 
+On OpenSuSE, this requires these packages::
+
+
+  zypper install patch
+  zypper install make
+  zypper install gcc
+  zypper install zlib-devel
+  zypper install openssl-devel
+
+
+Explain about HMAC and doing that in a safe way (don't fall in the - now fixed - `Signal HMAC related bugs <https://pwnaccelerator.github.io/2016/signal-part1.html>`_)
+
 Some semi-random Delphi SSL related posts
 *****************************************
 
